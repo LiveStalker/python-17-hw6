@@ -17,12 +17,16 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
-from signup import views as signup_view
+from signup import views as signup_views
+from qs import views as qs_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', signup_view.index, name='index'),
+    url(r'^$', signup_views.index, name='index'),
+
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
-    url(r'^signup/$', signup_view.SignUpView.as_view(), name='signup')
+    url(r'^signup/$', signup_views.SignUpView.as_view(), name='signup'),
+
+    url(r'ask/$', qs_views.AskQuestionView.as_view(), name='ask')
 ]
