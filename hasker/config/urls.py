@@ -21,6 +21,7 @@ from signup import views as signup_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', signup_view.index, name='index'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
     url(r'^signup/$', signup_view.SignUpView.as_view(), name='signup')
