@@ -6,7 +6,7 @@
     {% endif %}
     <a href="{% url 'index' %}">New questions</a> | <a href="{% url 'index' %}?order=votes">Hot questions</a>
     {% for q in questions %}
-        <p>{{ q.votes }} | {{ q.answer_count }} | {{ q.title }} |
+        <p>{{ q.votes }} | {{ q.answer_count }} | <a href="{{ q.get_absolute_url }}">{{ q.title }}</a> |
         <a href="/profile/{{ q.author }}/">{{ q.author }}</a> | {{ q.created | naturaltime }}</p>
         <hr>
     {% endfor %}

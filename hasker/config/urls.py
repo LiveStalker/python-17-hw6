@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
     url(r'^signup/$', signup_views.SignUpView.as_view(), name='signup'),
 
-    url(r'ask/$', qs_views.AskQuestionView.as_view(), name='ask')
+    url(r'ask/$', qs_views.AskQuestionView.as_view(), name='ask'),
+    url(r'question/(?P<slug>[-\w]+)/$', qs_views.QuestionDetailView.as_view(), name='question')
 ]

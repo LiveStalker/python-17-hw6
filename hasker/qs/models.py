@@ -17,7 +17,11 @@ class Question(models.Model):
     created = models.DateTimeField(default=timezone.now)
     tags = models.ManyToManyField(Tag, related_name='questions')
     votes = models.PositiveIntegerField(default=0)
+    slug = models.SlugField(unique=True)
 
+    @models.permalink
+    def get_absolute_url(self):
+        return 'question', (self.slug,)
 
     @property
     def answer_count(self):
