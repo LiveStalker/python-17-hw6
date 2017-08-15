@@ -1,6 +1,13 @@
 {% extends "base.html" %}
+{% load humanize %}
 {% block content %}
     {% if user.is_authenticated %}
         <a href="{% url 'ask' %}">Ask!</a>
     {% endif %}
+    <a href="{% url 'index' %}">New questions</a> | <a href="{% url 'index' %}?order=votes">Hot questions</a>
+    {% for q in questions %}
+        <p>{{ q.votes }} | {{ q.answer_count }} | {{ q.title }} |
+        <a href="/profile/{{ q.author }}/">{{ q.author }}</a> | {{ q.created | naturaltime }}</p>
+        <hr>
+    {% endfor %}
 {% endblock %}

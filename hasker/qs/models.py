@@ -16,7 +16,17 @@ class Question(models.Model):
     author = models.ForeignKey(User, related_name='questions')
     created = models.DateTimeField(default=timezone.now)
     tags = models.ManyToManyField(Tag, related_name='questions')
+    votes = models.PositiveIntegerField(default=0)
+
+
+    @property
+    def answer_count(self):
+        return self.answers.count()
 
 
 class Answer(models.Model):
-    pass
+    question = models.ForeignKey(Question, related_name='answers')
+    content = models.TextField(blank=False, null=False)
+    author = models.ForeignKey(User, related_name='answers')
+    created = models.DateTimeField(default=timezone.now)
+    correct = models.BooleanField(default=False)

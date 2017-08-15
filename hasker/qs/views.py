@@ -2,11 +2,22 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
-from django.views.generic import View
+from django.views.generic import View, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import AskQuestionForm
 from .models import Question, Tag
+
+
+class QuestionList(ListView):
+    template_name = 'index.html'
+    model = Question
+    context_object_name = 'questions'
+
+    def get_ordering(self):
+        order = self.request.GET.get('order', 'created')
+        # TODO if field name does not exists
+        return '-' + order
 
 
 class AskQuestionView(LoginRequiredMixin, View):
@@ -28,7 +39,7 @@ class AskQuestionView(LoginRequiredMixin, View):
             question.author = request.user
             question.save()
             for word in form.cleaned_data.get('tags'):
-                #TODO if tag exist
+                # TODO if tag exist
                 tag = Tag(word=word)
                 tag.save()
                 question.tags.add(tag)

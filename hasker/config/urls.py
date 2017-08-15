@@ -22,7 +22,7 @@ from qs import views as qs_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', signup_views.index, name='index'),
+    url(r'^$', qs_views.QuestionList.as_view(), name='index'),
 
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
