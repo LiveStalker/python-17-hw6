@@ -1,5 +1,5 @@
 from django import forms
-from .models import Question, Tag
+from .models import Question, Tag, Answer
 
 
 class TagsField(forms.CharField):
@@ -14,3 +14,9 @@ class AskQuestionForm(forms.ModelForm):
     class Meta:
         model = Question
         fields = ('title', 'content', 'tags')
+
+
+class AnswerForm(forms.ModelForm):
+    class Meta:
+        model = Answer
+        fields = ('content',)
