@@ -54,7 +54,6 @@ class AskQuestionView(LoginRequiredMixin, View):
 
 
 class QuestionView(View):
-    @method_decorator(login_required)
     def get(self, request, *argc, **kwargs):
         slug = kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
@@ -66,6 +65,7 @@ class QuestionView(View):
             'form': form
         })
 
+    @method_decorator(login_required)
     def post(self, request, *argc, **kwargs):
         slug = kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
