@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+    <h2>{{ question.title }}</h2>
+    <p>{{ question.content }}</p>
+    {% for a in answers %}
+        <hr>
+        <p>{{ a.content }}</p>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <h2>Your answer</h2>
+    <form method="post" enctype="application/x-www-form-urlencoded">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </p>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+{% endblock %}
