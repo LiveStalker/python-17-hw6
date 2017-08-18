@@ -1,13 +1,42 @@
 {% extends "base.html" %}
 {% load humanize %}
 {% block content %}
-    {% if user.is_authenticated %}
-        <a href="{% url 'ask' %}">Ask!</a>
-    {% endif %}
-    <a href="{% url 'index' %}">New questions</a> | <a href="{% url 'index' %}?order=votes">Hot questions</a>
-    {% for q in questions %}
-        <p>{{ q.votes }} | {{ q.answer_count }} | <a href="{{ q.get_absolute_url }}">{{ q.title }}</a> |
-        <a href="/profile/{{ q.author }}/">{{ q.author }}</a> | {{ q.created | naturaltime }}</p>
-        <hr>
-    {% endfor %}
+    <div class="row">
+        <div class="col-sm-8">
+            <h3><a href="{% url 'index' %}">New questions</a> | <a href="{% url 'index' %}?order=votes">Hot
+                questions</a></h3>
+        </div>
+        <div class="col-sm-4">
+            {% if user.is_authenticated %}
+                <p class="text-center"><a class="btn btn-default" role="button" href="{% url 'ask' %}">Ask!</a></p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-7">
+            {% for q in questions %}
+                <div class="row">
+                    <div class="col-sm-2" align="center">
+                        <h5>{{ q.votes }}</h5>
+                        <h5>Votes</h5>
+                    </div>
+                    <div class="col-sm-2" align="center">
+                        <h5>{{ q.answer_count }}</h5>
+                        <h5>Answers</h5>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-1" align="left">
+                        <h4><a href="{{ q.get_absolute_url }}">{{ q.title }}</a></h4>
+                        tags
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="text-center"><a href="/profile/{{ q.author }}/">{{ q.author }}</a></p>
+                        <p class="text-center">{{ q.created | naturaltime }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
 {% endblock %}
