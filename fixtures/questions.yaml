@@ -1,0 +1,263 @@
+- model: qs.question
+  pk: 5
+  fields:
+    title: How can i return stdout to value on python?
+    content: "I made some script. I want return stdout to value on python.\r\nBut
+      my script not work."
+    author: 1
+    created: 2017-08-18 08:32:25.648000+00:00
+    votes: 0
+    slug: how-can-i-return-stdout-to-value-on-python
+    tags: []
+- model: qs.question
+  pk: 6
+  fields:
+    title: How to IMPLEMENT A SIMPLE PYTHON DECORATOR Program?
+    content: Please help to learn how to Implement a Python decorator that should
+      take whatever the decorated function returns, and writes it to a file in a new
+      line.
+    author: 3
+    created: 2017-08-17 08:33:13.307000+00:00
+    votes: 0
+    slug: how-to-implement-a-simple-python-decorator-program
+    tags: []
+- model: qs.question
+  pk: 7
+  fields:
+    title: TensorFlow?
+    content: "The array is [1.5, 2.3, 4.7, 2.9] and its mean is 2.85.\r\n\r\nI want
+      get the array is [4.7, 2.9] and calculate its mean.\r\n\r\nHow can I do that
+      with TensorFlow?"
+    author: 4
+    created: 2017-08-16 08:34:54.032000+00:00
+    votes: 0
+    slug: tensorflow
+    tags: []
+- model: qs.question
+  pk: 8
+  fields:
+    title: Running python code on a web-page
+    content: At the moment I have a chat bot written in python on my laptop. I need
+      to launch it on a web page so it can be accessed from the internet. What do
+      I need to set up to make it happen?
+    author: 1
+    created: 2017-08-17 08:36:59.223000+00:00
+    votes: 0
+    slug: running-python-code-on-a-web-page
+    tags: []
+- model: qs.question
+  pk: 9
+  fields:
+    title: Django get model by querystring
+    content: I want the user to be able to pass a querystring in url like https://example.com/models?id=232.
+      But the query string is optional. so https://example/models should work too.
+    author: 1
+    created: 2017-08-17 08:37:33.767000+00:00
+    votes: 0
+    slug: django-get-model-by-querystring
+    tags: []
+- model: qs.question
+  pk: 10
+  fields:
+    title: SWIG2 with NUMPY
+    content: I am trying to build a SWIG2.0 interface for my C++ class. Only requirement
+      is that I need to be able to pass a numpy array from python into the C++ class.
+    author: 2
+    created: 2017-08-14 08:41:18.398000+00:00
+    votes: 0
+    slug: swig2-with-numpy
+    tags: []
+- model: qs.question
+  pk: 11
+  fields:
+    title: Call definite folder name and value in dictionary in Python
+    content: I want to write function that will copy structure and content of one
+      root folder to another one (that already contains most of files in the initial
+      folder and function must compare files and directories and copy if it is not
+      exists in destination folder). Name of folders are the dict.values().
+    author: 5
+    created: 2017-08-16 08:42:28.407000+00:00
+    votes: 0
+    slug: call-definite-folder-name-and-value-in-dictionary-in-python
+    tags: []
+- model: qs.question
+  pk: 12
+  fields:
+    title: "ValueError: invalid literal for float(): \u201C320\u201D for a normal
+      string"
+    content: 'I just encountered a very strange problem: I try to turn a string to
+      float and then back to str.'
+    author: 3
+    created: 2017-08-14 08:45:56.652000+00:00
+    votes: 0
+    slug: valueerror-invalid-literal-for-float-320-for-a-normal-string
+    tags: []
+- model: qs.question
+  pk: 13
+  fields:
+    title: Importing Bootstrap SCSS into a Django project
+    content: 'Do I assume correctly, that in my custom SCSS, I can not access the
+      variables of Bootstrap (because it''s a compiled CSS, not an SCSS)? I tried
+      to change $spacer: 1rem !default; and it didn''t work.'
+    author: 5
+    created: 2017-08-17 08:42:26.360000+00:00
+    votes: 0
+    slug: importing-bootstrap-scss-into-a-django-project
+    tags: []
+- model: qs.question
+  pk: 14
+  fields:
+    title: Best practice for tests that run on multiple input files in Python
+    content: Most test frameworks assume that "1 test = 1 Python method/function",
+      and consider a test as passed when the function executes without raising assertions.
+    author: 1
+    created: 2017-08-17 08:45:54.159000+00:00
+    votes: 0
+    slug: best-practice-for-tests-that-run-on-multiple-input-files-in-python
+    tags: []
+- model: qs.question
+  pk: 16
+  fields:
+    title: What curve_fit to use in scipy for this dataset?
+    content: I am trying to fit a curve to a set of data points.
+    author: 2
+    created: 2017-08-18 08:47:52.185005+00:00
+    votes: 0
+    slug: what-curve_fit-to-use-in-scipy-for-this-dataset
+    tags: []
+- model: qs.question
+  pk: 17
+  fields:
+    title: Understand fast prime numbers generator
+    content: Can someone please describe how this code works?
+    author: 3
+    created: 2017-08-13 08:49:08.282000+00:00
+    votes: 0
+    slug: understand-fast-prime-numbers-generator
+    tags: []
+- model: qs.question
+  pk: 18
+  fields:
+    title: Pandas how to use pd.cut()
+    content: I am surprised that 0 is not in (0, 30], what should I do to categorize
+      0 as (0, 30]?
+    author: 4
+    created: 2017-08-04 08:46:27.247000+00:00
+    votes: 0
+    slug: pandas-how-to-use-pdcut
+    tags: []
+- model: qs.question
+  pk: 19
+  fields:
+    title: Django admin page adding save as pdf button
+    content: In the below code I have added a save as pdf button in admin page by
+      customizing it.While I'm clicking the save as pdf button it should display the
+      details of the current page in pdf format.I couldn't able to retrieve the separate
+      data of the current page to display it in the pdf form(my_template.html).How
+      to do it? Thanks in advance.
+    author: 5
+    created: 2017-08-18 08:49:45.683000+00:00
+    votes: 0
+    slug: django-admin-page-adding-save-as-pdf-button
+    tags: []
+- model: qs.question
+  pk: 20
+  fields:
+    title: How to stop QuickBooks Online API oAuth 2 issue with client_id parameter?
+    content: Which I have successfully done using requests-oauthlib and correctly
+      get the response from the QBO API with the code (to exchange for token), the
+      realmid (the actual QBO company file) and the state.
+    author: 4
+    created: 2017-08-18 08:57:03.638000+00:00
+    votes: 0
+    slug: how-to-stop-quickbooks-online-api-oauth-2-issue-with-client_id-parameter
+    tags: []
+- model: qs.question
+  pk: 21
+  fields:
+    title: How to add additional sum column to the DataFrame based on specific column
+      groups?
+    content: What I want is first groupby col1 and then sum col2 columns of the groups,
+      finally add the sum to the DataFrame and get.
+    author: 1
+    created: 2017-08-18 08:47:22.304000+00:00
+    votes: 0
+    slug: how-to-add-additional-sum-column-to-the-dataframe-based-on-specific-column-groups
+    tags: []
+- model: qs.question
+  pk: 22
+  fields:
+    title: hat does this tornado error message mean?
+    content: I get this error, no idea why, since nothing in the stacktrace is my
+      code and every error is tornado code.
+    author: 3
+    created: 2017-08-18 08:34:50.808000+00:00
+    votes: 0
+    slug: hat-does-this-tornado-error-message-mean
+    tags: []
+- model: qs.question
+  pk: 23
+  fields:
+    title: Run python script from python GUI(Pyjamas)
+    content: I need run a python program from a Python GUI(Pyjamas).When ever I press
+      a button a python program on a specific path should run. any help on this???
+    author: 1
+    created: 2017-08-18 08:58:08.352000+00:00
+    votes: 0
+    slug: run-python-script-from-python-guipyjamas
+    tags: []
+- model: qs.question
+  pk: 24
+  fields:
+    title: Can not import patterns in django 1.11.4
+    content: "My project urls.py is as follows:\r\n\r\nfrom django.conf.urls import
+      include, url\r\n\r\nfrom django.contrib import admin\r\nadmin.autodiscover()\r\n\r\nurlpadrtterns
+      = [\r\nurl(r'^admin/', include(admin.site.urls)),\r\nurl(r'^myapp/', include('myapp.urls')),\r\n]"
+    author: 5
+    created: 2017-08-18 08:34:07.239000+00:00
+    votes: 0
+    slug: can-not-import-patterns-in-django-1114
+    tags: []
+- model: qs.question
+  pk: 25
+  fields:
+    title: Caching in Azure Functions using python
+    content: "I am using Azure Queue as a trigger in my azure function.\r\n\r\nMy
+      azure function connects to mongoDB fetch some collections.\r\n\r\nSome of this
+      collection can vary from 100 Documents to 1 Million Documents. Some collections
+      are common for all the queue jobs.\r\n\r\nSo I need to cache those common collections.
+      I don't want to use any external caching services(Azure Redis Server etc).\r\n\r\nIs
+      there a way to use File Caching(or any other kind of caching)?\r\n\r\nI am using
+      Python 3.5.2."
+    author: 2
+    created: 2017-08-18 08:36:34.282000+00:00
+    votes: 0
+    slug: caching-in-azure-functions-using-python
+    tags: []
+- model: qs.question
+  pk: 26
+  fields:
+    title: Using a metaclass to substitute a class definition?
+    content: "Python 3.6\r\n\r\nI'm trying to modify the behavior of a third party
+      library.\r\n\r\nI don't want to directly change the source code."
+    author: 1
+    created: 2017-08-18 08:42:08.230000+00:00
+    votes: 0
+    slug: using-a-metaclass-to-substitute-a-class-definition
+    tags: []
+- model: qs.question
+  pk: 27
+  fields:
+    title: scrapyd-client command not found
+    content: "down vote\r\nfavorite\r\nI'd just installed the scrapyd-client(1.1.0)
+      in a virtualenv, and run command 'scrapyd-deploy' successfully, but when I run
+      'scrapyd-client', the terminal said: command not found: scrapyd-client.\r\n\r\nAccording
+      to the readme file(https://github.com/scrapy/scrapyd-client), there should be
+      a 'scrapyd-client' command.\r\n\r\nI had checked the path '/lib/python2.7/site-packages/scrapyd-client',
+      only 'scrapyd-deploy' in the folder.\r\n\r\nIs the command 'scrapyd-client'
+      being removed for now?"
+    author: 1
+    created: 2017-08-18 08:50:25.823000+00:00
+    votes: 0
+    slug: scrapyd-client-command-not-found
+    tags: []

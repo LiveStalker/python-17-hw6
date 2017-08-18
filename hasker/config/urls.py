@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
+from signup.forms import LoginForm
 from signup import views as signup_views
 from qs import views as qs_views
 
@@ -24,7 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', qs_views.QuestionList.as_view(), name='index'),
 
-    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^login/$', auth_views.login, {'template_name': 'login.html', 'form_class': LoginForm}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
     url(r'^signup/$', signup_views.SignUpView.as_view(), name='signup'),
 

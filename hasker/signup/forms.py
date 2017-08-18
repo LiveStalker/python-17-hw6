@@ -1,6 +1,11 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+
+
+class LoginForm(AuthenticationForm):
+    def __init__(self, request=None, *argc, **kwargs):
+        super(LoginForm, self).__init__(request, *argc, **kwargs)
 
 
 class SignUpForm(UserCreationForm):
