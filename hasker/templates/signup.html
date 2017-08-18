@@ -10,23 +10,22 @@
                 <input type="hidden" name="next" value="{{ next }}"/>
                 <fieldset>
 
-                    <!-- Form Name -->
                     <legend>Sign Up</legend>
 
                     {% for field in form %}
                         <div class="form-group">
-                            <label class="col-sm-4 control-label"
+                            <label class="col-sm-3 control-label"
                                    for="{{ field.id_for_label }}">{{ field.label }}</label>
-                            <div class="col-sm-4">
+                            <div class="col-sm-5">
                                 <input id="{{ field.auto_id }}" name="{{ field.name }}"
                                        type="{{ field.field.widget.input_type }}"
-                                       class="form-control input-md" required="">
+                                       class="form-control input-md" {% if field.field.required %}required{% endif %}>
                             </div>
                         </div>
                     {% endfor %}
                 </fieldset>
                 <div class="form-group">
-                    <div class="col-sm-offset-4 col-sm-10">
+                    <div class="col-sm-offset-3 col-sm-9">
                         <button type="submit" class="btn btn-default">Sign Up</button>
                     </div>
                 </div>
