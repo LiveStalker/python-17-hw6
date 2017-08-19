@@ -3,7 +3,8 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+    RUN_ENV = os.environ.get('HASKER_RUN_ENV', 'dev')
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.{}".format(RUN_ENV))
     try:
         from django.core.management import execute_from_command_line
     except ImportError:

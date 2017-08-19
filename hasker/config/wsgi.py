@@ -11,6 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+RUN_ENV = os.environ.get('HASKER_RUN_ENV', 'dev')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.{}".format(RUN_ENV))
 
 application = get_wsgi_application()
