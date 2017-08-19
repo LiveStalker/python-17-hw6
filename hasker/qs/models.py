@@ -23,9 +23,9 @@ class Question(models.Model):
     def get_absolute_url(self):
         return 'question', (self.slug,)
 
-    @property
-    def answer_count(self):
-        return self.answers.count()
+    #@property
+    #def answer_count(self):
+    #    return self.answers.count()
 
 
 class Answer(models.Model):

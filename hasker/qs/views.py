@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.utils.text import slugify
 from django.shortcuts import get_object_or_404
+from django.db.models import Count
 
 from .forms import AskQuestionForm, AnswerForm
 from .models import Question, Tag
@@ -22,6 +23,10 @@ class QuestionList(ListView):
         order = self.request.GET.get('order', 'created')
         # TODO if field name does not exists
         return '-' + order
+
+    def get_queryset(self):
+        q = super(QuestionList, self).get_queryset()
+        return q.annotate(answer_count=Count('answers'))
 
 
 class AskQuestionView(LoginRequiredMixin, View):
