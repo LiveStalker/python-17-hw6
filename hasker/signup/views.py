@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm
+from .models import UserProfile
 
 
 def index(request):
@@ -19,10 +20,11 @@ class SignUpView(View):
     def post(self, request, *args, **kwargs):
         form = SignUpForm(request.POST, request.FILES)
         if form.is_valid():
+            # TODO transaction
             user = form.save()
-            user.refresh_from_db()
-            user.user_profile.avatar = form.cleaned_data.get('avatar')
-            user.save()
+            profile = UserProfile(user=user)
+            profile.avatar = form.cleaned_data.get('avatar')
+            profile.save()
             password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=password)
             login(request, user)
