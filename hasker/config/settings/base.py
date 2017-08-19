@@ -87,13 +87,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+HASKER_DB_HOST = os.environ.get('HASKER_DB_HOST', 'localhost')
+HASKER_DB_NAME = get_env_variable('HASKER_DB_NAME')
+HASKER_DB_USER = get_env_variable('HASKER_DB_USER')
+HASKER_DB_PASSWORD = get_env_variable('HASKER_DB_PASSWORD')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('HASKER_DB_NAME'),
-        'HOST': os.environ.get('HASKER_DB_HOST'),
-        'USER': os.environ.get('HASKER_DB_USER'),
-        'PASSWORD': os.environ.get('HASKER_DB_PASSWORD'),
+        'NAME': HASKER_DB_HOST,
+        'HOST': HASKER_DB_HOST,
+        'USER': HASKER_DB_USER,
+        'PASSWORD': HASKER_DB_PASSWORD,
         'OPTIONS': {
 
         }
