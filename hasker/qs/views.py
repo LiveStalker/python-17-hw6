@@ -81,6 +81,7 @@ class QuestionView(View):
             answer.author = request.user
             answer.question = question
             answer.save()
+            form = AnswerForm()
         return render(request, 'question.html', {
             'question': question,
             'answers': answers,
