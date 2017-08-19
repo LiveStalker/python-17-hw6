@@ -95,7 +95,7 @@ HASKER_DB_PASSWORD = get_env_variable('HASKER_DB_PASSWORD')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': HASKER_DB_HOST,
+        'NAME': HASKER_DB_NAME,
         'HOST': HASKER_DB_HOST,
         'USER': HASKER_DB_USER,
         'PASSWORD': HASKER_DB_PASSWORD,
