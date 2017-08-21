@@ -23,9 +23,13 @@ class Question(models.Model):
     def get_absolute_url(self):
         return 'question', (self.slug,)
 
-    #@property
-    #def answer_count(self):
-    #    return self.answers.count()
+    @property
+    def is_correct_answered(self):
+        return self.answers.filter(correct=True).count()
+
+        # @property
+        # def answer_count(self):
+        #    return self.answers.count()
 
 
 class Answer(models.Model):
@@ -35,3 +39,7 @@ class Answer(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     correct = models.BooleanField(default=False)
     votes = models.PositiveIntegerField(default=0)
+
+    @models.permalink
+    def get_correct_url(self):
+        return 'answer_correct', (self.id,)

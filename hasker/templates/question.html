@@ -30,8 +30,12 @@
                         <p><a href="#"><span class="glyphicon glyphicon-menu-up"></span></a></p>
                         <p>{{ a.votes }}</p>
                         <p><a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></p>
-                        {% if not question.check %}
-                            <p><a href="#"><span class="glyphicon glyphicon-star-empty"></span></a></p>
+                        {% if question.author == user and not question.is_correct_answered %}
+                            <p><a href="{{ a.get_correct_url }}"><span
+                                    class="glyphicon glyphicon-star-empty"></span></a></p>
+                        {% endif %}
+                        {% if a.correct %}
+                            <p><span class="glyphicon glyphicon-star"></span></p>
                         {% endif %}
                     </div>
                     <div class="col-sm-11">

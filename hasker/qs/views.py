@@ -11,7 +11,7 @@ from django.shortcuts import get_object_or_404
 from django.db.models import Count
 
 from .forms import AskQuestionForm, AnswerForm
-from .models import Question, Tag
+from .models import Question, Tag, Answer
 
 
 class QuestionList(ListView):
@@ -87,3 +87,17 @@ class QuestionView(View):
             'answers': answers,
             'form': form
         })
+
+
+class AnswerCorrect(LoginRequiredMixin, View):
+    # TODO make ajax post
+    http_method_names = ('get',)
+
+    def get(self, request, *argc, **kwargs):
+        answer_id = kwargs['id']
+        answer = get_object_or_404(Answer, id=answer_id)
+        question = answer.question
+        if request.user == question.author and not question.is_correct_answered:
+            answer.correct = True
+            answer.save()
+        return redirect('question', slug=question.slug)
