@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^signup/$', signup_views.SignUpView.as_view(), name='signup'),
 
     url(r'ask/$', qs_views.AskQuestionView.as_view(), name='ask'),
-    url(r'question/(?P<slug>[-\w]+)/$', qs_views.QuestionView.as_view(), name='question')
+    url(r'question/(?P<slug>[-\w]+)/$', qs_views.QuestionView.as_view(), name='question'),
+    url(r'answer_correct/(?P<id>\d+)/$', qs_views.AnswerCorrect.as_view(), name='answer_correct'),
 ]
