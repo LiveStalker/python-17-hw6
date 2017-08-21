@@ -5,17 +5,26 @@
         <div class="col-sm-8 col-sm-offset-2">
             <h2>{{ question.title }}</h2>
             <p>{{ question.content }}</p>
+            <p>
+                {% for tag in question.tags.all %}
+                    <a class="btn btn-info btn-xs" href="#" role="button">{{ tag.word }}</a>
+                {% endfor %}
+            </p>
             <hr>
         </div>
     </div>
     {% for a in answers %}
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-                <p>{{ a.content }}</p>
+                <blockquote>
+                    <p>{{ a.content }}</p>
+                    <footer>{{ a.author }}</footer>
+                </blockquote>
                 <hr>
             </div>
         </div>
     {% endfor %}
+    <!--form with new answer-->
     {% if user.is_authenticated %}
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
