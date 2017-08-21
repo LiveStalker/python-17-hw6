@@ -14,7 +14,7 @@ class Question(models.Model):
     title = models.CharField(max_length=200, blank=False, null=False)
     content = models.TextField(blank=False, null=False)
     author = models.ForeignKey(User, related_name='questions')
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tag, related_name='questions')
     votes = models.PositiveIntegerField(default=0)
     slug = models.SlugField(max_length=200, unique=True)
@@ -23,14 +23,15 @@ class Question(models.Model):
     def get_absolute_url(self):
         return 'question', (self.slug,)
 
-    @property
-    def answer_count(self):
-        return self.answers.count()
+    #@property
+    #def answer_count(self):
+    #    return self.answers.count()
 
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, related_name='answers')
     content = models.TextField(blank=False, null=False)
     author = models.ForeignKey(User, related_name='answers')
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(auto_now_add=True)
     correct = models.BooleanField(default=False)
+    votes = models.PositiveIntegerField(default=0)
