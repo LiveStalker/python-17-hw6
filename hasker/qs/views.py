@@ -54,7 +54,7 @@ class AskQuestionView(LoginRequiredMixin, View):
                 tag.save()
                 question.tags.add(tag)
             question.save()
-            return redirect('index')
+            return redirect('question', slug=question.slug)
         return render(request, 'ask.html', {'form': form})
 
 
@@ -62,7 +62,7 @@ class QuestionView(View):
     def get(self, request, *argc, **kwargs):
         slug = kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
-        answers = question.answers.all()
+        answers = question.answers.order_by('-votes').order_by('-created')
         form = AnswerForm()
         return render(request, 'question.html', {
             'question': question,
@@ -74,7 +74,7 @@ class QuestionView(View):
     def post(self, request, *argc, **kwargs):
         slug = kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
-        answers = question.answers.all()
+        answers = question.answers.order_by('-votes').order_by('-created')
         form = AnswerForm(request.POST)
         if form.is_valid():
             answer = form.save(commit=False)
@@ -82,11 +82,7 @@ class QuestionView(View):
             answer.question = question
             answer.save()
             form = AnswerForm()
-        return render(request, 'question.html', {
-            'question': question,
-            'answers': answers,
-            'form': form
-        })
+        return redirect('question', slug=slug)
 
 
 class AnswerCorrect(LoginRequiredMixin, View):
