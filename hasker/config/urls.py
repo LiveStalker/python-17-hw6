@@ -20,6 +20,7 @@ from django.contrib.auth import views as auth_views
 from signup.forms import LoginForm
 from signup import views as signup_views
 from qs import views as qs_views
+from votes import views as vote_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -32,4 +33,7 @@ urlpatterns = [
     url(r'ask/$', qs_views.AskQuestionView.as_view(), name='ask'),
     url(r'question/(?P<slug>[-\w]+)/$', qs_views.QuestionView.as_view(), name='question'),
     url(r'answer_correct/(?P<id>\d+)/$', qs_views.AnswerCorrect.as_view(), name='answer_correct'),
+
+    url(r'vote/question/(?P<id>\d+)/$', vote_views.vote_question, name='vote_question'),
+    url(r'vote/answer/(?P<id>\d+)/$', vote_views.vote_question, name='vote_answer'),
 ]

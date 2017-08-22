@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
 
 
 class Tag(models.Model):
@@ -18,6 +17,7 @@ class Question(models.Model):
     tags = models.ManyToManyField(Tag, related_name='questions')
     votes = models.PositiveIntegerField(default=0)
     slug = models.SlugField(max_length=200, unique=True)
+    voters = models.ManyToManyField(User, related_name='voted_questions')
 
     @models.permalink
     def get_absolute_url(self):
@@ -27,10 +27,6 @@ class Question(models.Model):
     def is_correct_answered(self):
         return self.answers.filter(correct=True).count()
 
-        # @property
-        # def answer_count(self):
-        #    return self.answers.count()
-
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, related_name='answers')
@@ -39,6 +35,7 @@ class Answer(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     correct = models.BooleanField(default=False)
     votes = models.PositiveIntegerField(default=0)
+    voters = models.ManyToManyField(User, related_name='voted_answers')
 
     @models.permalink
     def get_correct_url(self):
