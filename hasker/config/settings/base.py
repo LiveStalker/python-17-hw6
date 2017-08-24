@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'signup',
-    'qs'
+    'qs',
+    'votes'
 ]
 
 MIDDLEWARE = [
