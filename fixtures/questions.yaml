@@ -43,6 +43,12 @@
 - model: qs.tag
   pk: 15
   fields: {word: gas}
+- model: qs.questionvoteduser
+  pk: 3
+  fields: {user: 5, question: 8, result: 1}
+- model: qs.questionvoteduser
+  pk: 4
+  fields: {user: 5, question: 5, result: 1}
 - model: qs.question
   pk: 1
   fields:
@@ -53,7 +59,6 @@
     votes: 0
     slug: does-looking-at-a-picture-of-the-sun-hurt-your-eyes
     tags: [1, 2]
-    voters: []
 - model: qs.question
   pk: 2
   fields:
@@ -65,7 +70,6 @@
     votes: 0
     slug: can-you-lose-your-virginity-if-you-fall
     tags: [3]
-    voters: []
 - model: qs.question
   pk: 3
   fields:
@@ -77,7 +81,6 @@
     votes: 0
     slug: my-girl-swallowed-after
     tags: [4]
-    voters: []
 - model: qs.question
   pk: 4
   fields:
@@ -89,7 +92,6 @@
     votes: 0
     slug: 8d-is-this-a-shovel-or-a-crying-smiley-face
     tags: [5, 6, 7]
-    voters: []
 - model: qs.question
   pk: 5
   fields:
@@ -101,10 +103,9 @@
       weigh. is this true. has anyone tried that and did it work for you?
     author: 5
     created: 2017-08-24 13:38:29.181000+00:00
-    votes: 0
+    votes: 1
     slug: can-you-actually-lose-weight-by-rubbing-your-stomach
     tags: [8, 9]
-    voters: []
 - model: qs.question
   pk: 6
   fields:
@@ -115,7 +116,6 @@
     votes: 0
     slug: what-does-fall-2010-mean
     tags: [10, 11]
-    voters: []
 - model: qs.question
   pk: 7
   fields:
@@ -128,7 +128,6 @@
     votes: 0
     slug: help-i-cannot-take-off-my-mothers-bra-and-shes-gonna-be-home-in-5-minutes-the-mirror-doesnt-help-much
     tags: [12, 13]
-    voters: []
 - model: qs.question
   pk: 8
   fields:
@@ -141,1766 +140,1188 @@
       give him a thumbs down. I'm just trying to get to the truth."
     author: 1
     created: 2017-08-24 14:28:34.001000+00:00
-    votes: 0
+    votes: 1
     slug: can-i-tell-by-the-smell-of-my-husbands-gas-if-he-has-been-cheating
     tags: [14, 15]
-    voters: []
+- model: qs.answervoteduser
+  pk: 8
+  fields: {user: 1, answer: 151, result: 1}
+- model: qs.answervoteduser
+  pk: 14
+  fields: {user: 1, answer: 159, result: -1}
+- model: qs.answervoteduser
+  pk: 15
+  fields: {user: 1, answer: 158, result: 1}
+- model: qs.answervoteduser
+  pk: 16
+  fields: {user: 1, answer: 157, result: 1}
+- model: qs.answervoteduser
+  pk: 17
+  fields: {user: 1, answer: 156, result: 1}
+- model: qs.answervoteduser
+  pk: 18
+  fields: {user: 1, answer: 155, result: 1}
+- model: qs.answervoteduser
+  pk: 19
+  fields: {user: 1, answer: 152, result: 1}
+- model: qs.answervoteduser
+  pk: 20
+  fields: {user: 1, answer: 154, result: 1}
+- model: qs.answervoteduser
+  pk: 21
+  fields: {user: 1, answer: 103, result: 1}
+- model: qs.answervoteduser
+  pk: 22
+  fields: {user: 1, answer: 110, result: 1}
+- model: qs.answervoteduser
+  pk: 23
+  fields: {user: 1, answer: 112, result: 1}
+- model: qs.answervoteduser
+  pk: 24
+  fields: {user: 1, answer: 82, result: -1}
+- model: qs.answervoteduser
+  pk: 25
+  fields: {user: 1, answer: 83, result: 1}
+- model: qs.answervoteduser
+  pk: 26
+  fields: {user: 1, answer: 79, result: -1}
+- model: qs.answervoteduser
+  pk: 27
+  fields: {user: 1, answer: 77, result: 1}
+- model: qs.answervoteduser
+  pk: 28
+  fields: {user: 1, answer: 76, result: 1}
+- model: qs.answervoteduser
+  pk: 29
+  fields: {user: 1, answer: 75, result: 1}
+- model: qs.answervoteduser
+  pk: 30
+  fields: {user: 1, answer: 72, result: -1}
+- model: qs.answervoteduser
+  pk: 31
+  fields: {user: 1, answer: 63, result: -1}
+- model: qs.answervoteduser
+  pk: 32
+  fields: {user: 1, answer: 58, result: -1}
+- model: qs.answervoteduser
+  pk: 33
+  fields: {user: 1, answer: 42, result: 1}
+- model: qs.answervoteduser
+  pk: 34
+  fields: {user: 1, answer: 40, result: 1}
+- model: qs.answervoteduser
+  pk: 35
+  fields: {user: 1, answer: 39, result: -1}
+- model: qs.answervoteduser
+  pk: 36
+  fields: {user: 1, answer: 38, result: 1}
+- model: qs.answervoteduser
+  pk: 37
+  fields: {user: 1, answer: 36, result: 1}
+- model: qs.answervoteduser
+  pk: 38
+  fields: {user: 1, answer: 35, result: -1}
+- model: qs.answervoteduser
+  pk: 39
+  fields: {user: 1, answer: 34, result: -1}
+- model: qs.answervoteduser
+  pk: 40
+  fields: {user: 1, answer: 33, result: -1}
+- model: qs.answervoteduser
+  pk: 41
+  fields: {user: 1, answer: 32, result: -1}
+- model: qs.answervoteduser
+  pk: 42
+  fields: {user: 1, answer: 29, result: 1}
+- model: qs.answervoteduser
+  pk: 43
+  fields: {user: 1, answer: 23, result: 1}
+- model: qs.answervoteduser
+  pk: 44
+  fields: {user: 1, answer: 21, result: 1}
+- model: qs.answervoteduser
+  pk: 45
+  fields: {user: 1, answer: 19, result: 1}
+- model: qs.answervoteduser
+  pk: 46
+  fields: {user: 1, answer: 20, result: 1}
+- model: qs.answervoteduser
+  pk: 47
+  fields: {user: 1, answer: 17, result: 1}
+- model: qs.answervoteduser
+  pk: 48
+  fields: {user: 1, answer: 9, result: 1}
+- model: qs.answervoteduser
+  pk: 49
+  fields: {user: 1, answer: 7, result: 1}
+- model: qs.answervoteduser
+  pk: 50
+  fields: {user: 1, answer: 6, result: 1}
+- model: qs.answervoteduser
+  pk: 51
+  fields: {user: 1, answer: 1, result: 1}
+- model: qs.answervoteduser
+  pk: 52
+  fields: {user: 2, answer: 159, result: -1}
+- model: qs.answervoteduser
+  pk: 53
+  fields: {user: 2, answer: 158, result: 1}
+- model: qs.answervoteduser
+  pk: 54
+  fields: {user: 2, answer: 157, result: 1}
+- model: qs.answervoteduser
+  pk: 55
+  fields: {user: 2, answer: 156, result: 1}
+- model: qs.answervoteduser
+  pk: 56
+  fields: {user: 2, answer: 155, result: 1}
+- model: qs.answervoteduser
+  pk: 57
+  fields: {user: 2, answer: 148, result: 1}
+- model: qs.answervoteduser
+  pk: 58
+  fields: {user: 2, answer: 145, result: 1}
+- model: qs.answervoteduser
+  pk: 59
+  fields: {user: 2, answer: 124, result: 1}
+- model: qs.answervoteduser
+  pk: 60
+  fields: {user: 2, answer: 113, result: 1}
+- model: qs.answervoteduser
+  pk: 61
+  fields: {user: 2, answer: 112, result: 1}
+- model: qs.answervoteduser
+  pk: 62
+  fields: {user: 2, answer: 110, result: 1}
+- model: qs.answervoteduser
+  pk: 63
+  fields: {user: 2, answer: 103, result: -1}
+- model: qs.answervoteduser
+  pk: 64
+  fields: {user: 2, answer: 96, result: 1}
+- model: qs.answervoteduser
+  pk: 65
+  fields: {user: 2, answer: 91, result: 1}
+- model: qs.answervoteduser
+  pk: 66
+  fields: {user: 2, answer: 85, result: 1}
+- model: qs.answervoteduser
+  pk: 67
+  fields: {user: 2, answer: 83, result: 1}
+- model: qs.answervoteduser
+  pk: 68
+  fields: {user: 2, answer: 82, result: -1}
+- model: qs.answervoteduser
+  pk: 69
+  fields: {user: 2, answer: 81, result: 1}
+- model: qs.answervoteduser
+  pk: 70
+  fields: {user: 2, answer: 79, result: -1}
+- model: qs.answervoteduser
+  pk: 71
+  fields: {user: 2, answer: 77, result: 1}
+- model: qs.answervoteduser
+  pk: 72
+  fields: {user: 2, answer: 76, result: 1}
+- model: qs.answervoteduser
+  pk: 73
+  fields: {user: 2, answer: 75, result: 1}
+- model: qs.answervoteduser
+  pk: 74
+  fields: {user: 2, answer: 78, result: 1}
+- model: qs.answervoteduser
+  pk: 75
+  fields: {user: 2, answer: 40, result: 1}
+- model: qs.answervoteduser
+  pk: 76
+  fields: {user: 2, answer: 39, result: -1}
+- model: qs.answervoteduser
+  pk: 77
+  fields: {user: 2, answer: 38, result: 1}
+- model: qs.answervoteduser
+  pk: 78
+  fields: {user: 2, answer: 34, result: -1}
+- model: qs.answervoteduser
+  pk: 79
+  fields: {user: 2, answer: 33, result: -1}
+- model: qs.answervoteduser
+  pk: 80
+  fields: {user: 2, answer: 32, result: -1}
+- model: qs.answervoteduser
+  pk: 81
+  fields: {user: 2, answer: 17, result: 1}
+- model: qs.answervoteduser
+  pk: 82
+  fields: {user: 2, answer: 19, result: 1}
+- model: qs.answervoteduser
+  pk: 83
+  fields: {user: 2, answer: 7, result: -1}
+- model: qs.answervoteduser
+  pk: 84
+  fields: {user: 2, answer: 6, result: -1}
+- model: qs.answervoteduser
+  pk: 85
+  fields: {user: 3, answer: 159, result: -1}
+- model: qs.answervoteduser
+  pk: 86
+  fields: {user: 3, answer: 158, result: 1}
+- model: qs.answervoteduser
+  pk: 87
+  fields: {user: 3, answer: 157, result: 1}
+- model: qs.answervoteduser
+  pk: 88
+  fields: {user: 3, answer: 152, result: 1}
+- model: qs.answervoteduser
+  pk: 89
+  fields: {user: 3, answer: 136, result: 1}
+- model: qs.answervoteduser
+  pk: 90
+  fields: {user: 3, answer: 137, result: 1}
+- model: qs.answervoteduser
+  pk: 91
+  fields: {user: 3, answer: 112, result: 1}
+- model: qs.answervoteduser
+  pk: 92
+  fields: {user: 3, answer: 109, result: 1}
+- model: qs.answervoteduser
+  pk: 93
+  fields: {user: 3, answer: 82, result: -1}
+- model: qs.answervoteduser
+  pk: 94
+  fields: {user: 3, answer: 83, result: 1}
+- model: qs.answervoteduser
+  pk: 95
+  fields: {user: 3, answer: 75, result: -1}
+- model: qs.answervoteduser
+  pk: 96
+  fields: {user: 3, answer: 77, result: 1}
+- model: qs.answervoteduser
+  pk: 97
+  fields: {user: 3, answer: 40, result: 1}
+- model: qs.answervoteduser
+  pk: 98
+  fields: {user: 3, answer: 33, result: -1}
+- model: qs.answervoteduser
+  pk: 99
+  fields: {user: 3, answer: 19, result: 1}
+- model: qs.answervoteduser
+  pk: 100
+  fields: {user: 3, answer: 6, result: -1}
+- model: qs.answervoteduser
+  pk: 101
+  fields: {user: 4, answer: 6, result: -1}
+- model: qs.answervoteduser
+  pk: 102
+  fields: {user: 5, answer: 6, result: -1}
+- model: qs.answervoteduser
+  pk: 103
+  fields: {user: 6, answer: 6, result: -1}
+- model: qs.answervoteduser
+  pk: 104
+  fields: {user: 7, answer: 6, result: -1}
+- model: qs.answervoteduser
+  pk: 105
+  fields: {user: 4, answer: 159, result: -1}
+- model: qs.answervoteduser
+  pk: 106
+  fields: {user: 5, answer: 159, result: -1}
+- model: qs.answervoteduser
+  pk: 107
+  fields: {user: 6, answer: 159, result: -1}
+- model: qs.answervoteduser
+  pk: 108
+  fields: {user: 7, answer: 159, result: -1}
+- model: qs.answervoteduser
+  pk: 109
+  fields: {user: 4, answer: 33, result: -1}
+- model: qs.answervoteduser
+  pk: 110
+  fields: {user: 5, answer: 33, result: -1}
+- model: qs.answervoteduser
+  pk: 111
+  fields: {user: 6, answer: 33, result: -1}
+- model: qs.answervoteduser
+  pk: 112
+  fields: {user: 7, answer: 33, result: -1}
+- model: qs.answervoteduser
+  pk: 116
+  fields: {user: 5, answer: 144, result: -1}
+- model: qs.answervoteduser
+  pk: 117
+  fields: {user: 5, answer: 140, result: 1}
+- model: qs.answervoteduser
+  pk: 118
+  fields: {user: 5, answer: 112, result: 1}
+- model: qs.answervoteduser
+  pk: 119
+  fields: {user: 5, answer: 83, result: 1}
+- model: qs.answervoteduser
+  pk: 120
+  fields: {user: 5, answer: 78, result: -1}
+- model: qs.answervoteduser
+  pk: 121
+  fields: {user: 5, answer: 42, result: 1}
+- model: qs.answervoteduser
+  pk: 130
+  fields: {user: 5, answer: 35, result: -1}
+- model: qs.answervoteduser
+  pk: 131
+  fields: {user: 5, answer: 19, result: 1}
+- model: qs.answervoteduser
+  pk: 132
+  fields: {user: 5, answer: 8, result: 1}
+- model: qs.answervoteduser
+  pk: 133
+  fields: {user: 5, answer: 149, result: 1}
+- model: qs.answervoteduser
+  pk: 134
+  fields: {user: 5, answer: 146, result: 1}
+- model: qs.answervoteduser
+  pk: 135
+  fields: {user: 5, answer: 142, result: 1}
+- model: qs.answervoteduser
+  pk: 138
+  fields: {user: 5, answer: 2, result: 1}
+- model: qs.answervoteduser
+  pk: 142
+  fields: {user: 5, answer: 158, result: -1}
 - model: qs.answer
   pk: 1
-  fields:
-    question: 1
-    content: not unless the sun literally comes out of the picture :)
-    author: 1
-    created: 2017-08-24 13:27:44.096000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 1, content: 'not unless the sun literally comes out of the picture
+      :)', author: 1, created: ! '2017-08-24 13:27:44.096000+00:00', correct: false,
+    votes: 1}
 - model: qs.answer
   pk: 2
-  fields:
-    question: 1
-    content: I believe it can, but not to all people. I was at a museum for an excursion
-      as a kid when I was in 3rd grade. There were many sculptures and paintings there.
-      But there was this one painting which was of the sun. Roughly 5 or 6 students
-      couldn't look at this picture because it really hurt their eyes and gave them
-      a headache. However, in all this it cannot blind you like looking at the sun
-      directly can, but it might hurt some people's eyes. people with blue eyes tend
-      to hurt when looking at images of the sun
-    author: 2
-    created: 2017-08-24 13:27:49.650000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 1, content: 'I believe it can, but not to all people. I was at
+      a museum for an excursion as a kid when I was in 3rd grade. There were many
+      sculptures and paintings there. But there was this one painting which was of
+      the sun. Roughly 5 or 6 students couldn''t look at this picture because it really
+      hurt their eyes and gave them a headache. However, in all this it cannot blind
+      you like looking at the sun directly can, but it might hurt some people''s eyes.
+      people with blue eyes tend to hurt when looking at images of the sun', author: 2,
+    created: ! '2017-08-24 13:27:49.650000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 3
-  fields:
-    question: 1
-    content: It might have done for a man in the UK if they were homosexual. Mind
-      you, since dropping the Page 3 models last year I'm sure it's not a problem
-      now.
-    author: 2
-    created: 2017-08-24 13:27:57.620000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 1, content: 'It might have done for a man in the UK if they were
+      homosexual. Mind you, since dropping the Page 3 models last year I''m sure it''s
+      not a problem now.', author: 2, created: ! '2017-08-24 13:27:57.620000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 4
-  fields:
-    question: 1
-    content: Yeah
-    author: 4
-    created: 2017-08-24 13:28:03.449000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 1, content: Yeah, author: 4, created: ! '2017-08-24 13:28:03.449000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 5
-  fields:
-    question: 1
-    content: This question hurts my eyes
-    author: 2
-    created: 2017-08-24 13:28:21.637000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 1, content: This question hurts my eyes, author: 2, created: ! '2017-08-24
+      13:28:21.637000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 6
-  fields:
-    question: 1
-    content: yes and looking at a river you get wet
-    author: 3
-    created: 2017-08-24 13:28:27.392000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 1, content: yes and looking at a river you get wet, author: 3,
+    created: ! '2017-08-24 13:28:27.392000+00:00', correct: false, votes: -1}
 - model: qs.answer
   pk: 7
-  fields:
-    question: 1
-    content: No have you ever been to school once?
-    author: 2
-    created: 2017-08-24 13:28:34.320000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 1, content: 'No have you ever been to school once?', author: 2,
+    created: ! '2017-08-24 13:28:34.320000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 8
-  fields:
-    question: 1
-    content: No, I used to wonder that as well.
-    author: 5
-    created: 2017-08-24 13:28:42.033000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 1, content: 'No, I used to wonder that as well.', author: 5,
+    created: ! '2017-08-24 13:28:42.033000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 9
-  fields:
-    question: 2
-    content: "Assuming you're a female, you CAN break your hymen by falling, I'm sure.
-      \r\n\r\nHowever, breaking your hymen is hardly an indication anymore (if it
-      ever was) of a female being a virgin. \r\nVirginity is typically determined
-      by whether or not you have had sex. Sex usually being some form of penetration
-      by a man's penis in a straight couple."
-    author: 1
-    created: 2017-08-24 13:29:24.297000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: "Assuming you're a female, you CAN break your hymen
+      by falling, I'm sure. \r\n\r\nHowever, breaking your hymen is hardly an indication
+      anymore (if it ever was) of a female being a virgin. \r\nVirginity is typically
+      determined by whether or not you have had sex. Sex usually being some form of
+      penetration by a man's penis in a straight couple.", author: 1, created: ! '2017-08-24
+      13:29:24.297000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 10
-  fields:
-    question: 2
-    content: It has been recorded since the start of the human civilisation of cases
-      of women losing virginity after tripping, slipping and falling onto hard surfaces.
-      This occurs because the pressure build causes the hymen to split. This technically
-      means the lady has lost her virginity
-    author: 2
-    created: 2017-08-24 13:29:29.795000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: 'It has been recorded since the start of the human
+      civilisation of cases of women losing virginity after tripping, slipping and
+      falling onto hard surfaces. This occurs because the pressure build causes the
+      hymen to split. This technically means the lady has lost her virginity', author: 2,
+    created: ! '2017-08-24 13:29:29.795000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 11
-  fields:
-    question: 2
-    content: Well, I had the same debate with a friend of mine. He said that you cannot,
-      but I said, you totally can. This has been proven multiple times, by many doctors
-      and scientists. This is why many Egyptian Pharaoh's didn't have many childran,
-      because their wives fell over at a younger age and lost their virginity '
-    author: 3
-    created: 2017-08-24 13:29:36.061000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: 'Well, I had the same debate with a friend of mine.
+      He said that you cannot, but I said, you totally can. This has been proven multiple
+      times, by many doctors and scientists. This is why many Egyptian Pharaoh''s
+      didn''t have many childran, because their wives fell over at a younger age and
+      lost their virginity ''', author: 3, created: ! '2017-08-24 13:29:36.061000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 12
-  fields:
-    question: 2
-    content: If you are cashing out loss of virginity in terms of rupture of the maidenhead
-      (hymen), then it is possible. The maidenhead can rupture from things like horseback
-      riding or doing the splits. It seems as though it would have to be a fairly
-      unusual fall for a girl or woman to rupture her maidenhead from one, though.
-    author: 1
-    created: 2017-08-24 13:29:42.008000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: 'If you are cashing out loss of virginity in terms
+      of rupture of the maidenhead (hymen), then it is possible. The maidenhead can
+      rupture from things like horseback riding or doing the splits. It seems as though
+      it would have to be a fairly unusual fall for a girl or woman to rupture her
+      maidenhead from one, though.', author: 1, created: ! '2017-08-24 13:29:42.008000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 13
-  fields:
-    question: 2
-    content: I'm pretty sure you lost some brain cells from falling. You must have
-      "falled" a long way buddy.
-    author: 4
-    created: 2017-08-24 13:30:46.561000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: I'm pretty sure you lost some brain cells from falling.
+      You must have "falled" a long way buddy., author: 4, created: ! '2017-08-24
+      13:30:46.561000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 14
-  fields:
-    question: 2
-    content: No you have to have sex to lose your virginity
-    author: 1
-    created: 2017-08-24 13:30:51.903000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: No you have to have sex to lose your virginity, author: 1,
+    created: ! '2017-08-24 13:30:51.903000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 15
-  fields:
-    question: 2
-    content: It depends on whether a man catches your fall, and what body part he
-      uses to do it.
-    author: 5
-    created: 2017-08-24 13:30:56.937000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: 'It depends on whether a man catches your fall, and
+      what body part he uses to do it.', author: 5, created: ! '2017-08-24 13:30:56.937000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 16
-  fields:
-    question: 2
-    content: You lose your virginity by having sex. Falling isn't sex.
-    author: 1
-    created: 2017-08-24 13:31:06.728000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: You lose your virginity by having sex. Falling isn't
+      sex., author: 1, created: ! '2017-08-24 13:31:06.728000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 17
-  fields:
-    question: 2
-    content: It depends on what you fall on, I suppose...
-    author: 6
-    created: 2017-08-24 13:31:13.074000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: 'It depends on what you fall on, I suppose...', author: 6,
+    created: ! '2017-08-24 13:31:13.074000+00:00', correct: false, votes: 2}
 - model: qs.answer
   pk: 18
-  fields:
-    question: 2
-    content: You ******* idiot.
-    author: 4
-    created: 2017-08-24 13:31:21.911000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: You ******* idiot., author: 4, created: ! '2017-08-24
+      13:31:21.911000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 19
-  fields:
-    question: 2
-    content: WTF
-    author: 1
-    created: 2017-08-24 13:31:31.897000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: WTF, author: 1, created: ! '2017-08-24 13:31:31.897000+00:00',
+    correct: false, votes: 4}
 - model: qs.answer
   pk: 20
-  fields:
-    question: 2
-    content: WTF what a troll.. and if not... NO
-    author: 2
-    created: 2017-08-24 13:31:37.641000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 2, content: WTF what a troll.. and if not... NO, author: 2, created: ! '2017-08-24
+      13:31:37.641000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 21
-  fields:
-    question: 3
-    content: Hahahaaa!!!! This is great!! Give her the laxative just for shts and
-      giggles, I want to know what she says!
-    author: 3
-    created: 2017-08-24 13:33:14.412000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: 'Hahahaaa!!!! This is great!! Give her the laxative
+      just for shts and giggles, I want to know what she says!', author: 3, created: ! '2017-08-24
+      13:33:14.412000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 22
-  fields:
-    question: 3
-    content: I'm sure she might have plenty of toilet babies :-D I think a laxative
-      could be useful if she is struggling when the time comes. And they'd be easy
-      to care for too- only need to get rid of the poo once.
-    author: 1
-    created: 2017-08-24 13:33:28.194000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: 'I''m sure she might have plenty of toilet babies
+      :-D I think a laxative could be useful if she is struggling when the time comes.
+      And they''d be easy to care for too- only need to get rid of the poo once.',
+    author: 1, created: ! '2017-08-24 13:33:28.194000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 23
-  fields:
-    question: 3
-    content: It's literally impossible to get pregnant by swallowing..
-    author: 4
-    created: 2017-08-24 13:33:32.971000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: It's literally impossible to get pregnant by swallowing..,
+    author: 4, created: ! '2017-08-24 13:33:32.971000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 24
-  fields:
-    question: 3
-    content: "In order for pregnancy to occur, sperm needs to enter the vagina. Your
-      right the act of sexual intercourse does not necessally have to occur in order
-      to get a women pregnant, however as I have said it needs to enter the vagina
-      so if you have had oral sex with her it is IMPOSSIBLE for her to get pregnant
-      :) \r\nP.S: \r\nYou shouldn't be engaging in sexual acts with your girlfriend
-      if you still don't understand basic things about reproduction and contraception.
-      I strongly advise that you educate yourself, even just through the internet
-      about sex and how to protect yourself from impregnating a girl and getting STIs(STIs).
-      Also, sit down and talk to your girlfriend and ask her how she feels about taking
-      a long-Term contraceptive eg the pill, implants or an injection; if your going
-      to have sex she should be on one of these as well as you using a condom."
-    author: 1
-    created: 2017-08-24 13:33:39.770000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: "In order for pregnancy to occur, sperm needs to
+      enter the vagina. Your right the act of sexual intercourse does not necessally
+      have to occur in order to get a women pregnant, however as I have said it needs
+      to enter the vagina so if you have had oral sex with her it is IMPOSSIBLE for
+      her to get pregnant :) \r\nP.S: \r\nYou shouldn't be engaging in sexual acts
+      with your girlfriend if you still don't understand basic things about reproduction
+      and contraception. I strongly advise that you educate yourself, even just through
+      the internet about sex and how to protect yourself from impregnating a girl
+      and getting STIs(STIs). Also, sit down and talk to your girlfriend and ask her
+      how she feels about taking a long-Term contraceptive eg the pill, implants or
+      an injection; if your going to have sex she should be on one of these as well
+      as you using a condom.", author: 1, created: ! '2017-08-24 13:33:39.770000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 25
-  fields:
-    question: 3
-    content: Don't bother asking her because nobody can get pregnant due to swallowing.
-    author: 3
-    created: 2017-08-24 13:33:49.661000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: Don't bother asking her because nobody can get pregnant
+      due to swallowing., author: 3, created: ! '2017-08-24 13:33:49.661000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 26
-  fields:
-    question: 3
-    content: Don't worry. She'll tell you what to do with those laxatives.
-    author: 1
-    created: 2017-08-24 13:33:54.144000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: Don't worry. She'll tell you what to do with those
+      laxatives., author: 1, created: ! '2017-08-24 13:33:54.144000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 27
-  fields:
-    question: 3
-    content: She can't get pregnant that way.
-    author: 3
-    created: 2017-08-24 13:34:00.055000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: She can't get pregnant that way., author: 3, created: ! '2017-08-24
+      13:34:00.055000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 28
-  fields:
-    question: 3
-    content: Inthis way pregnency never happened. But before that what you do thats
-      the question. Anyway just do a PT(pregnency test) and get free
-    author: 1
-    created: 2017-08-24 13:34:05.077000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: Inthis way pregnency never happened. But before that
+      what you do thats the question. Anyway just do a PT(pregnency test) and get
+      free, author: 1, created: ! '2017-08-24 13:34:05.077000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 29
-  fields:
-    question: 3
-    content: "This question is a little hard to swallow ! \r\nSurely you know which
-      end is for what."
-    author: 2
-    created: 2017-08-24 13:34:14.727000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: "This question is a little hard to swallow ! \r\nSurely
+      you know which end is for what.", author: 2, created: ! '2017-08-24 13:34:14.727000+00:00',
+    correct: false, votes: 1}
 - model: qs.answer
   pk: 30
-  fields:
-    question: 3
-    content: did she snort when she swallowed? if she snorted you are in the clear,
-      if she gagged or made a mmmm sound, then sorry bro, better start picking out
-      cribs and baby seats.
-    author: 2
-    created: 2017-08-24 13:34:26.401000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: 'did she snort when she swallowed? if she snorted
+      you are in the clear, if she gagged or made a mmmm sound, then sorry bro, better
+      start picking out cribs and baby seats.', author: 2, created: ! '2017-08-24
+      13:34:26.401000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 31
-  fields:
-    question: 3
-    content: She cannot get pregnant that way
-    author: 3
-    created: 2017-08-24 13:34:36.725000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: She cannot get pregnant that way, author: 3, created: ! '2017-08-24
+      13:34:36.725000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 32
-  fields:
-    question: 3
-    content: "Have you had no proper sex education?! \r\n\r\nYou cannot get pregnant
-      from this...ZERO chance!!"
-    author: 5
-    created: 2017-08-24 13:34:43.409000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: "Have you had no proper sex education?! \r\n\r\nYou
+      cannot get pregnant from this...ZERO chance!!", author: 5, created: ! '2017-08-24
+      13:34:43.409000+00:00', correct: false, votes: -2}
 - model: qs.answer
   pk: 33
-  fields:
-    question: 3
-    content: You can shoot off in her mouth, her hand, her armpit, between her boobs,
-      in her butt. The only place you can't shoot off is in her pu$$y.
-    author: 3
-    created: 2017-08-24 13:34:50.907000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: 'You can shoot off in her mouth, her hand, her armpit,
+      between her boobs, in her butt. The only place you can''t shoot off is in her
+      pu$$y.', author: 3, created: ! '2017-08-24 13:34:50.907000+00:00', correct: false,
+    votes: -3}
 - model: qs.answer
   pk: 34
-  fields:
-    question: 3
-    content: You need a sex ed class immediately
-    author: 1
-    created: 2017-08-24 13:34:58.392000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: You need a sex ed class immediately, author: 1, created: ! '2017-08-24
+      13:34:58.392000+00:00', correct: false, votes: -2}
 - model: qs.answer
   pk: 35
-  fields:
-    question: 3
-    content: Please stop having sex until you understand how the human body works...
-      I beg you.
-    author: 2
-    created: 2017-08-24 13:35:03.385000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 3, content: Please stop having sex until you understand how the
+      human body works... I beg you., author: 2, created: ! '2017-08-24 13:35:03.385000+00:00',
+    correct: false, votes: -2}
 - model: qs.answer
   pk: 36
-  fields:
-    question: 4
-    content: "It's a penis! \r\n\r\nthe 8 represents the balls \r\n\r\nthe ===== represents
-      the shaft \r\n\r\nthe D represents the head. \r\n\r\nIt looks like a penis doesn't
-      it: \r\n\r\nHere's a vagina ({ }) \r\n\r\nHere's a mouth 0: \r\n\r\nHere's a
-      butthole (__*__) \r\n\r\nHere's a looser one (__o__) \r\n\r\nHere's an even
-      looser one (__0__) \r\n\r\nAn even looser one (__O__) \r\n\r\nHere's the penis
-      when it's c**ing 8====D~~~ \r\n\r\nHere's one in the opposite direction ~~~C======3"
-    author: 1
-    created: 2017-08-24 13:36:23.005000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 4, content: "It's a penis! \r\n\r\nthe 8 represents the balls
+      \r\n\r\nthe ===== represents the shaft \r\n\r\nthe D represents the head. \r\n\r\nIt
+      looks like a penis doesn't it: \r\n\r\nHere's a vagina ({ }) \r\n\r\nHere's
+      a mouth 0: \r\n\r\nHere's a butthole (__*__) \r\n\r\nHere's a looser one (__o__)
+      \r\n\r\nHere's an even looser one (__0__) \r\n\r\nAn even looser one (__O__)
+      \r\n\r\nHere's the penis when it's c**ing 8====D~~~ \r\n\r\nHere's one in the
+      opposite direction ~~~C======3", author: 1, created: ! '2017-08-24 13:36:23.005000+00:00',
+    correct: false, votes: 1}
 - model: qs.answer
   pk: 37
-  fields:
-    question: 4
-    content: When I see this, I do not see an image, but rather a metaphor which is
-      open to interpretation. For example, when I see this image, I think that the
-      "8" is shooting lasers "=" which hits an object "D". I interpret this as Aliens
-      coming to Earth at some point or another, and they are not friendly, they will
-      cause a revolution globally. My friend sees it as just a shovel. Therefore,
+  fields: {question: 4, content: 'When I see this, I do not see an image, but rather
+      a metaphor which is open to interpretation. For example, when I see this image,
+      I think that the "8" is shooting lasers "=" which hits an object "D". I interpret
+      this as Aliens coming to Earth at some point or another, and they are not friendly,
+      they will cause a revolution globally. My friend sees it as just a shovel. Therefore,
       this particular image is not one image, but is in fact open to interpretation
       by many, some see it as a metaphor for the future, others see it as a shovel.
-      it's up to you what you see
-    author: 4
-    created: 2017-08-24 13:36:45.166000+00:00
-    correct: false
-    votes: 0
-    voters: []
+      it''s up to you what you see', author: 4, created: ! '2017-08-24 13:36:45.166000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 38
-  fields:
-    question: 4
-    content: Be careful your question doesn't get deleted. That particular emoticon
-      represents a penis.
-    author: 2
-    created: 2017-08-24 13:36:51.240000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 4, content: Be careful your question doesn't get deleted. That
+      particular emoticon represents a penis., author: 2, created: ! '2017-08-24 13:36:51.240000+00:00',
+    correct: false, votes: 2}
 - model: qs.answer
   pk: 39
-  fields:
-    question: 4
-    content: Your kidding, right? its pretty goddamn obvious
-    author: 2
-    created: 2017-08-24 13:36:55.759000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 4, content: 'Your kidding, right? its pretty goddamn obvious',
+    author: 2, created: ! '2017-08-24 13:36:55.759000+00:00', correct: false, votes: -2}
 - model: qs.answer
   pk: 40
-  fields:
-    question: 4
-    content: It's whatever you want it to be.
-    author: 3
-    created: 2017-08-24 13:37:00.626000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 4, content: It's whatever you want it to be., author: 3, created: ! '2017-08-24
+      13:37:00.626000+00:00', correct: false, votes: 3}
 - model: qs.answer
   pk: 41
-  fields:
-    question: 4
-    content: It's whatever you want it to be.
-    author: 2
-    created: 2017-08-24 13:37:01.076000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 4, content: It's whatever you want it to be., author: 2, created: ! '2017-08-24
+      13:37:01.076000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 42
-  fields:
-    question: 4
-    content: "I sure hope so............but no its an..........erm............between
+  fields: {question: 4, content: "I sure hope so............but no its an..........erm............between
       a mans legs (penis and testies)..........yeah........ \r\n\r\nor atleast that's
-      what my cousin said........."
-    author: 5
-    created: 2017-08-24 13:37:08.129000+00:00
-    correct: false
-    votes: 0
-    voters: []
+      what my cousin said.........", author: 5, created: ! '2017-08-24 13:37:08.129000+00:00',
+    correct: false, votes: 2}
 - model: qs.answer
   pk: 43
-  fields:
-    question: 5
-    content: You had your daughter at 12?
-    author: 4
-    created: 2017-08-24 13:38:39.175000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'You had your daughter at 12?', author: 4, created: ! '2017-08-24
+      13:38:39.175000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 44
-  fields:
-    question: 5
-    content: Having baby at age 12...Trying to lose weight by rubbing your stomach..
-      obvious troll lol
-    author: 4
-    created: 2017-08-24 13:38:48.159000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Having baby at age 12...Trying to lose weight by
+      rubbing your stomach.. obvious troll lol, author: 4, created: ! '2017-08-24
+      13:38:48.159000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 45
-  fields:
-    question: 5
-    content: "Music makes you eat more. According to a survey by the journal Psychology
-      and also Marketing, soft, classical tunes encourage you to take time over your
-      supper, so you consume more foodstuff. So, switch off \u2013 silence will always
-      make you more aware of what you\u2019re putting in your mouth."
-    author: 3
-    created: 2017-08-24 13:38:53.487000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: "Music makes you eat more. According to a survey
+      by the journal Psychology and also Marketing, soft, classical tunes encourage
+      you to take time over your supper, so you consume more foodstuff. So, switch
+      off \u2013 silence will always make you more aware of what you\u2019re putting
+      in your mouth.", author: 3, created: ! '2017-08-24 13:38:53.487000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 46
-  fields:
-    question: 5
-    content: You had your daughter when you were 12? You think you can lose weight
-      if you rub your stomach? Obvious Troll.
-    author: 2
-    created: 2017-08-24 13:38:58.675000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'You had your daughter when you were 12? You think
+      you can lose weight if you rub your stomach? Obvious Troll.', author: 2, created: ! '2017-08-24
+      13:38:58.675000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 47
-  fields:
-    question: 5
-    content: Be blue! Weirdly, azure shades have been proven to get a positive effect
-      on your may to exercise regularly and avoid bad foods. So, wear orange, eat
-      from blue plates watching the pounds drop off!
-    author: 4
-    created: 2017-08-24 13:39:03.033000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'Be blue! Weirdly, azure shades have been proven
+      to get a positive effect on your may to exercise regularly and avoid bad foods.
+      So, wear orange, eat from blue plates watching the pounds drop off!', author: 4,
+    created: ! '2017-08-24 13:39:03.033000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 48
-  fields:
-    question: 5
-    content: Baggy clothes hide your system and encourage lounging around. So even
-      if you're relaxing at home, wear fitted clothes to help keep you on track.
-    author: 5
-    created: 2017-08-24 13:39:09.984000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'Baggy clothes hide your system and encourage lounging
+      around. So even if you''re relaxing at home, wear fitted clothes to help keep
+      you on track.', author: 5, created: ! '2017-08-24 13:39:09.984000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 49
-  fields:
-    question: 5
-    content: Buy the appropriate size. Squeezing into those skinny jeans will make
-      your muffin top much more noticable.
-    author: 4
-    created: 2017-08-24 13:39:14.193000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Buy the appropriate size. Squeezing into those skinny
+      jeans will make your muffin top much more noticable., author: 4, created: ! '2017-08-24
+      13:39:14.193000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 50
-  fields:
-    question: 5
-    content: "It\u2019s not necessarily weight-loss, it\u2019s health-gain. Think
-      about your changes in order to gain things, not lose these individuals."
-    author: 3
-    created: 2017-08-24 13:39:19.607000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: "It\u2019s not necessarily weight-loss, it\u2019s
+      health-gain. Think about your changes in order to gain things, not lose these
+      individuals.", author: 3, created: ! '2017-08-24 13:39:19.607000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 51
-  fields:
-    question: 5
-    content: Ummmm... don't you think that if this was actually true and it was that
-      easy to lose weight, then wouldn't all human beings be stick-figures by now???
-    author: 3
-    created: 2017-08-24 13:39:23.993000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'Ummmm... don''t you think that if this was actually
+      true and it was that easy to lose weight, then wouldn''t all human beings be
+      stick-figures by now???', author: 3, created: ! '2017-08-24 13:39:23.993000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 52
-  fields:
-    question: 5
-    content: "Never give up! Even if you\u2019ve failed 10 situations before, slipped
-      up on your diet plan programme and fallen prey to some food binge, it\u2019s
-      even more reason to get back up and start all over again."
-    author: 5
-    created: 2017-08-24 13:39:28.359000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: "Never give up! Even if you\u2019ve failed 10 situations
+      before, slipped up on your diet plan programme and fallen prey to some food
+      binge, it\u2019s even more reason to get back up and start all over again.",
+    author: 5, created: ! '2017-08-24 13:39:28.359000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 53
-  fields:
-    question: 5
-    content: Adequate sleep is critical for weight management
-    author: 5
-    created: 2017-08-24 13:39:38.058000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Adequate sleep is critical for weight management,
+    author: 5, created: ! '2017-08-24 13:39:38.058000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 54
-  fields:
-    question: 5
-    content: Without a doubt
-    author: 2
-    created: 2017-08-24 13:39:43.327000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Without a doubt, author: 2, created: ! '2017-08-24
+      13:39:43.327000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 55
-  fields:
-    question: 5
-    content: Choose faster-paced types of yoga such as Ashtanga or Vinyasa to burn
-      more calories while also obtaining a good stretch.
-    author: 7
-    created: 2017-08-24 13:39:48.392000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Choose faster-paced types of yoga such as Ashtanga
+      or Vinyasa to burn more calories while also obtaining a good stretch., author: 7,
+    created: ! '2017-08-24 13:39:48.392000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 56
-  fields:
-    question: 5
-    content: Weight training is better as compared to cardio
-    author: 5
-    created: 2017-08-24 13:39:53.307000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Weight training is better as compared to cardio,
+    author: 5, created: ! '2017-08-24 13:39:53.307000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 57
-  fields:
-    question: 5
-    content: Don't just have there! Do squats while combing your teeth, calf raises
-      whilst standing in line, or lunges while chatting about the phone.
-    author: 6
-    created: 2017-08-24 13:39:57.947000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'Don''t just have there! Do squats while combing
+      your teeth, calf raises whilst standing in line, or lunges while chatting about
+      the phone.', author: 6, created: ! '2017-08-24 13:39:57.947000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 58
-  fields:
-    question: 5
-    content: Not at all. The only path to being fit is through diet and exercise.
-      There's no easy way out, if you find it hard at first I suggest you make gradual
-      changes like walking more and cutting out fatty foods. Baby steps.
-    author: 5
-    created: 2017-08-24 13:40:03.578000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'Not at all. The only path to being fit is through
+      diet and exercise. There''s no easy way out, if you find it hard at first I
+      suggest you make gradual changes like walking more and cutting out fatty foods.
+      Baby steps.', author: 5, created: ! '2017-08-24 13:40:03.578000+00:00', correct: false,
+    votes: -1}
 - model: qs.answer
   pk: 59
-  fields:
-    question: 5
-    content: Add an extra five minutes in your cardio routine.
-    author: 4
-    created: 2017-08-24 13:40:07.875000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Add an extra five minutes in your cardio routine.,
+    author: 4, created: ! '2017-08-24 13:40:07.875000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 60
-  fields:
-    question: 5
-    content: Uhh you guys ... My mom s ex bestfriend had a daughter at twelve ...
-      O-O yes i know
-    author: 2
-    created: 2017-08-24 13:40:12.553000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Uhh you guys ... My mom s ex bestfriend had a daughter
+      at twelve ... O-O yes i know, author: 2, created: ! '2017-08-24 13:40:12.553000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 61
-  fields:
-    question: 5
-    content: Add sprinting intervals to your workout to target belly fat.
-    author: 2
-    created: 2017-08-24 13:40:16.851000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Add sprinting intervals to your workout to target
+      belly fat., author: 2, created: ! '2017-08-24 13:40:16.851000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 62
-  fields:
-    question: 5
-    content: LOL this is funny. You were 12 when u had a baby? this cant be real
-    author: 4
-    created: 2017-08-24 13:40:22.167000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'LOL this is funny. You were 12 when u had a baby?
+      this cant be real', author: 4, created: ! '2017-08-24 13:40:22.167000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 63
-  fields:
-    question: 5
-    content: Can you grow taller by biting dirt?
-    author: 6
-    created: 2017-08-24 13:40:30.324000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'Can you grow taller by biting dirt?', author: 6,
+    created: ! '2017-08-24 13:40:30.324000+00:00', correct: false, votes: -1}
 - model: qs.answer
   pk: 64
-  fields:
-    question: 5
-    content: Add sprinting intervals to your workout to belly fat.
-    author: 5
-    created: 2017-08-24 13:40:34.631000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Add sprinting intervals to your workout to belly
+      fat., author: 5, created: ! '2017-08-24 13:40:34.631000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 65
-  fields:
-    question: 5
-    content: Naturally so
-    author: 3
-    created: 2017-08-24 13:40:39.710000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Naturally so, author: 3, created: ! '2017-08-24 13:40:39.710000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 66
-  fields:
-    question: 5
-    content: That... That's not even teenage pregnancy...
-    author: 4
-    created: 2017-08-24 13:40:44.987000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: That... That's not even teenage pregnancy..., author: 4,
+    created: ! '2017-08-24 13:40:44.987000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 67
-  fields:
-    question: 5
-    content: "Get back on basics \u2013 burn more calories from fat than you ingest."
-    author: 2
-    created: 2017-08-24 13:40:50.117000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: "Get back on basics \u2013 burn more calories from
+      fat than you ingest.", author: 2, created: ! '2017-08-24 13:40:50.117000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 68
-  fields:
-    question: 5
-    content: Absolutely so
-    author: 4
-    created: 2017-08-24 13:40:55.172000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Absolutely so, author: 4, created: ! '2017-08-24
+      13:40:55.172000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 69
-  fields:
-    question: 5
-    content: that's right
-    author: 5
-    created: 2017-08-24 13:41:01.748000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: that's right, author: 5, created: ! '2017-08-24 13:41:01.748000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 70
-  fields:
-    question: 5
-    content: Easily so
-    author: 2
-    created: 2017-08-24 13:41:06.959000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Easily so, author: 2, created: ! '2017-08-24 13:41:06.959000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 71
-  fields:
-    question: 5
-    content: Yes, for sure.
-    author: 4
-    created: 2017-08-24 13:41:12.360000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'Yes, for sure.', author: 4, created: ! '2017-08-24
+      13:41:12.360000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 72
-  fields:
-    question: 5
-    content: Stop taking meth
-    author: 4
-    created: 2017-08-24 13:41:22.392000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: Stop taking meth, author: 4, created: ! '2017-08-24
+      13:41:22.392000+00:00', correct: false, votes: -1}
 - model: qs.answer
   pk: 73
-  fields:
-    question: 5
-    content: ummmm? i really dont know doesnt sound like it
-    author: 1
-    created: 2017-08-24 13:41:26.805000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'ummmm? i really dont know doesnt sound like it',
+    author: 1, created: ! '2017-08-24 13:41:26.805000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 74
-  fields:
-    question: 5
-    content: LOL! no. not enough to be noticeable.
-    author: 1
-    created: 2017-08-24 13:41:31.935000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: LOL! no. not enough to be noticeable., author: 1,
+    created: ! '2017-08-24 13:41:31.935000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 75
-  fields:
-    question: 5
-    content: The bridge is over there.
-    author: 3
-    created: 2017-08-24 13:41:36.452000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: The bridge is over there., author: 3, created: ! '2017-08-24
+      13:41:36.452000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 76
-  fields:
-    question: 5
-    content: first time i hear that !
-    author: 3
-    created: 2017-08-24 13:41:41.343000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: first time i hear that !, author: 3, created: ! '2017-08-24
+      13:41:41.343000+00:00', correct: false, votes: 2}
 - model: qs.answer
   pk: 77
-  fields:
-    question: 5
-    content: yep, go for it!
-    author: 3
-    created: 2017-08-24 13:41:47.126000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: 'yep, go for it!', author: 3, created: ! '2017-08-24
+      13:41:47.126000+00:00', correct: false, votes: 3}
 - model: qs.answer
   pk: 78
-  fields:
-    question: 5
-    content: please do not reproduce again
-    author: 4
-    created: 2017-08-24 13:41:53.551000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 5, content: please do not reproduce again, author: 4, created: ! '2017-08-24
+      13:41:53.551000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 79
-  fields:
-    question: 6
-    content: It means this time next year. :) Semesters are referred to by the season
-      (spring, fall, and sometimes summer) and year in which they take place.
-    author: 4
-    created: 2017-08-24 13:42:54.826000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 6, content: 'It means this time next year. :) Semesters are referred
+      to by the season (spring, fall, and sometimes summer) and year in which they
+      take place.', author: 4, created: ! '2017-08-24 13:42:54.826000+00:00', correct: false,
+    votes: -2}
 - model: qs.answer
   pk: 80
-  fields:
-    question: 6
-    content: When it says fall 2010 it means that the video game is coming out in
-      the season of autumn (fall) in 2010 (this year). Every season comes on the 21st
-      and the next season comes out 3 months later. Fall starts on September 21 and
-      ends on December 20 where as the next day will start winter. Your chances are
-      that the games will come around the middle of that time. Preferable between
-      October 1st and November 30th.
-    author: 4
-    created: 2017-08-24 13:43:11.522000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 6, content: When it says fall 2010 it means that the video game
+      is coming out in the season of autumn (fall) in 2010 (this year). Every season
+      comes on the 21st and the next season comes out 3 months later. Fall starts
+      on September 21 and ends on December 20 where as the next day will start winter.
+      Your chances are that the games will come around the middle of that time. Preferable
+      between October 1st and November 30th., author: 4, created: ! '2017-08-24 13:43:11.522000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 81
-  fields:
-    question: 6
-    content: it means the fall of 2010 so Autumnof the year 2010 so if a movie is
-      coming out fall 2010 thn it would be next fall
-    author: 1
-    created: 2017-08-24 13:43:15.827000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 6, content: it means the fall of 2010 so Autumnof the year 2010
+      so if a movie is coming out fall 2010 thn it would be next fall, author: 1,
+    created: ! '2017-08-24 13:43:15.827000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 82
-  fields:
-    question: 6
-    content: It means falling 2010 feet. On your head. So therefore you ask silly
-      questions
-    author: 2
-    created: 2017-08-24 13:43:20.527000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 6, content: It means falling 2010 feet. On your head. So therefore
+      you ask silly questions, author: 2, created: ! '2017-08-24 13:43:20.527000+00:00',
+    correct: false, votes: -3}
 - model: qs.answer
   pk: 83
-  fields:
-    question: 6
-    content: Autumn (another name for Fall) starts on or around 15 September and ends
-      on about 20 December in solar term.
-    author: 3
-    created: 2017-08-24 13:43:25.834000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 6, content: Autumn (another name for Fall) starts on or around
+      15 September and ends on about 20 December in solar term., author: 3, created: ! '2017-08-24
+      13:43:25.834000+00:00', correct: false, votes: 4}
 - model: qs.answer
   pk: 84
-  fields:
-    question: 6
-    content: 5 years later....
-    author: 4
-    created: 2017-08-24 13:43:30.666000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 6, content: 5 years later...., author: 4, created: ! '2017-08-24
+      13:43:30.666000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 85
-  fields:
-    question: 7
-    content: "Ha ha ha =D \r\nR u a boy or a girl? If ur a girl then u shud no already.
-      If ur a boy I wish I cud be there wen she sees u in a bra =D"
-    author: 5
-    created: 2017-08-24 13:44:51.840000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: "Ha ha ha =D \r\nR u a boy or a girl? If ur a girl
+      then u shud no already. If ur a boy I wish I cud be there wen she sees u in
+      a bra =D", author: 5, created: ! '2017-08-24 13:44:51.840000+00:00', correct: false,
+    votes: 1}
 - model: qs.answer
   pk: 86
-  fields:
-    question: 7
-    content: Push the hooks at the same time and take it off, or in basic terms take
-      it and pull it over the precise of you like you're beginning up a shirt. PLus,
-      serves you actual for putting it on interior the 1st place
-    author: 6
-    created: 2017-08-24 13:44:54.841000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: 'Push the hooks at the same time and take it off,
+      or in basic terms take it and pull it over the precise of you like you''re beginning
+      up a shirt. PLus, serves you actual for putting it on interior the 1st place',
+    author: 6, created: ! '2017-08-24 13:44:54.841000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 87
-  fields:
-    question: 7
-    content: That's so funny! I've seen this EXACT same question with the EXACT same
-      wording on here before! What a coincidence!
-    author: 7
-    created: 2017-08-24 13:45:02.767000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: That's so funny! I've seen this EXACT same question
+      with the EXACT same wording on here before! What a coincidence!, author: 7,
+    created: ! '2017-08-24 13:45:02.767000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 88
-  fields:
-    question: 7
-    content: It's possible for sure
-    author: 4
-    created: 2017-08-24 13:45:08.372000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: It's possible for sure, author: 4, created: ! '2017-08-24
+      13:45:08.372000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 89
-  fields:
-    question: 7
-    content: "i haven't heard 'pickle' in a sentence in a while \r\n\r\nthanks for
-      the laugh"
-    author: 3
-    created: 2017-08-24 13:45:15.871000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: "i haven't heard 'pickle' in a sentence in a while
+      \r\n\r\nthanks for the laugh", author: 3, created: ! '2017-08-24 13:45:15.871000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 90
-  fields:
-    question: 7
-    content: 'I don''t know how I can help? but give advice: stay out of your mothers
-      unmentionables! Its sick and its wrong. show a little class and respect your
-      mother and your mothers belongings. would you like her to get into your underwear
-      etc?'
-    author: 5
-    created: 2017-08-24 13:45:22.648000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: 'I don''t know how I can help? but give advice: stay
+      out of your mothers unmentionables! Its sick and its wrong. show a little class
+      and respect your mother and your mothers belongings. would you like her to get
+      into your underwear etc?', author: 5, created: ! '2017-08-24 13:45:22.648000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 91
-  fields:
-    question: 7
-    content: Take your arms out, if it has any, and turn the thing around. Then you
-      can see what you are doing.
-    author: 6
-    created: 2017-08-24 13:45:28.015000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: 'Take your arms out, if it has any, and turn the
+      thing around. Then you can see what you are doing.', author: 6, created: ! '2017-08-24
+      13:45:28.015000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 92
-  fields:
-    question: 7
-    content: take it off over your head like a shirt
-    author: 7
-    created: 2017-08-24 13:45:33.097000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: take it off over your head like a shirt, author: 7,
+    created: ! '2017-08-24 13:45:33.097000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 93
-  fields:
-    question: 7
-    content: turn it so the clasp is in the front and you can now see it
-    author: 3
-    created: 2017-08-24 13:45:38.372000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: turn it so the clasp is in the front and you can
+      now see it, author: 3, created: ! '2017-08-24 13:45:38.372000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 94
-  fields:
-    question: 7
-    content: Who else is rolling on the floor laughing to death?
-    author: 2
-    created: 2017-08-24 13:45:49.668000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: 'Who else is rolling on the floor laughing to death?',
+    author: 2, created: ! '2017-08-24 13:45:49.668000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 95
-  fields:
-    question: 7
-    content: LOL cut it off & shove it in the bin she'll neva know!!
-    author: 1
-    created: 2017-08-24 13:46:14.645000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: LOL cut it off & shove it in the bin she'll neva
+      know!!, author: 1, created: ! '2017-08-24 13:46:14.645000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 96
-  fields:
-    question: 7
-    content: ha ha ha
-    author: 3
-    created: 2017-08-24 13:46:29.016000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: ha ha ha, author: 3, created: ! '2017-08-24 13:46:29.016000+00:00',
+    correct: false, votes: 1}
 - model: qs.answer
   pk: 97
-  fields:
-    question: 7
-    content: Good luck with that!
-    author: 4
-    created: 2017-08-24 14:25:35.533000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: Good luck with that!, author: 4, created: ! '2017-08-24
+      14:25:35.533000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 98
-  fields:
-    question: 7
-    content: the same thing happened to me too.
-    author: 5
-    created: 2017-08-24 14:25:39.224000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: the same thing happened to me too., author: 5, created: ! '2017-08-24
+      14:25:39.224000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 99
-  fields:
-    question: 7
-    content: well if u got it on u should be able to get it off...lol
-    author: 4
-    created: 2017-08-24 14:25:44.302000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: well if u got it on u should be able to get it off...lol,
+    author: 4, created: ! '2017-08-24 14:25:44.302000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 100
-  fields:
-    question: 7
-    content: if your a girl it isn't that big of a deal, if your a guy...you've got
-      some explaining to do
-    author: 3
-    created: 2017-08-24 14:25:49.997000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: 'if your a girl it isn''t that big of a deal, if
+      your a guy...you''ve got some explaining to do', author: 3, created: ! '2017-08-24
+      14:25:49.997000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 101
-  fields:
-    question: 7
-    content: why are you wearing your mothers bra
-    author: 2
-    created: 2017-08-24 14:25:54.601000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: why are you wearing your mothers bra, author: 2,
+    created: ! '2017-08-24 14:25:54.601000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 102
-  fields:
-    question: 7
-    content: well if ur smaller than ur mom (which i guess ur not) u should be able
-      to slide right out
-    author: 3
-    created: 2017-08-24 14:26:00.070000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: well if ur smaller than ur mom (which i guess ur
+      not) u should be able to slide right out, author: 3, created: ! '2017-08-24
+      14:26:00.070000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 103
-  fields:
-    question: 7
-    content: I hate it when that happens!
-    author: 2
-    created: 2017-08-24 14:26:04.545000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: I hate it when that happens!, author: 2, created: ! '2017-08-24
+      14:26:04.545000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 104
-  fields:
-    question: 7
-    content: just pull it over ur head...
-    author: 4
-    created: 2017-08-24 14:26:10.248000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: just pull it over ur head..., author: 4, created: ! '2017-08-24
+      14:26:10.248000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 105
-  fields:
-    question: 7
-    content: that is a tricky question
-    author: 5
-    created: 2017-08-24 14:26:19.963000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: that is a tricky question, author: 5, created: ! '2017-08-24
+      14:26:19.963000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 106
-  fields:
-    question: 7
-    content: "Dammit. I'm late answering this question. \r\n\r\nSorry. :)"
-    author: 6
-    created: 2017-08-24 14:26:37.951000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: "Dammit. I'm late answering this question. \r\n\r\nSorry.
+      :)", author: 6, created: ! '2017-08-24 14:26:37.951000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 107
-  fields:
-    question: 7
-    content: "wait. \r\nyou're joking, right? \r\nhaha. \r\nsorry. can't help you."
-    author: 3
-    created: 2017-08-24 14:26:44.387000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: "wait. \r\nyou're joking, right? \r\nhaha. \r\nsorry.
+      can't help you.", author: 3, created: ! '2017-08-24 14:26:44.387000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 108
-  fields:
-    question: 7
-    content: for heavens sake.....put some damn clothes on, she'll never know you
-      are wearing her panties.....
-    author: 4
-    created: 2017-08-24 14:26:51.124000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: 'for heavens sake.....put some damn clothes on, she''ll
+      never know you are wearing her panties.....', author: 4, created: ! '2017-08-24
+      14:26:51.124000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 109
-  fields:
-    question: 7
-    content: "HAHAHAHA! \r\n\r\nYOU GOT SOME 'SPLAINING TO DO!"
-    author: 6
-    created: 2017-08-24 14:26:59.005000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: "HAHAHAHA! \r\n\r\nYOU GOT SOME 'SPLAINING TO DO!",
+    author: 6, created: ! '2017-08-24 14:26:59.005000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 110
-  fields:
-    question: 7
-    content: "wow. nice joke. i may use that sometime. \r\n\r\nAre you a prostitute?
-      because you shouldn't be advetising sex on here!"
-    author: 3
-    created: 2017-08-24 14:27:12.162000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: "wow. nice joke. i may use that sometime. \r\n\r\nAre
+      you a prostitute? because you shouldn't be advetising sex on here!", author: 3,
+    created: ! '2017-08-24 14:27:12.162000+00:00', correct: false, votes: 2}
 - model: qs.answer
   pk: 111
-  fields:
-    question: 7
-    content: you're ******
-    author: 5
-    created: 2017-08-24 14:27:16.813000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: you're ******, author: 5, created: ! '2017-08-24
+      14:27:16.813000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 112
-  fields:
-    question: 7
-    content: LMAO!
-    author: 6
-    created: 2017-08-24 14:27:26.337000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 7, content: LMAO!, author: 6, created: ! '2017-08-24 14:27:26.337000+00:00',
+    correct: false, votes: 4}
 - model: qs.answer
   pk: 113
-  fields:
-    question: 8
-    content: you think a thai man is doing him?
-    author: 3
-    created: 2017-08-24 14:28:53.055000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'you think a thai man is doing him?', author: 3,
+    created: ! '2017-08-24 14:28:53.055000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 114
-  fields:
-    question: 8
-    content: I would have to say that if he is eating different foods it may change
-      the smell of his "gas". My hub went and ate Thai food one night and it was awful
-      when he got home. But I wouldn't say just because of that he is cheating. Men
-      go through changes just like women do. Me being the nosey little sneak I can
-      be would try to find other evidence if you really feel that he is cheating.
-      If he is eating out with other women he is using a debit card/credit card to
-      pay check the statements. Check cell records...and once he gets home is he hungry?
-    author: 5
-    created: 2017-08-24 14:28:57.058000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'I would have to say that if he is eating different
+      foods it may change the smell of his "gas". My hub went and ate Thai food one
+      night and it was awful when he got home. But I wouldn''t say just because of
+      that he is cheating. Men go through changes just like women do. Me being the
+      nosey little sneak I can be would try to find other evidence if you really feel
+      that he is cheating. If he is eating out with other women he is using a debit
+      card/credit card to pay check the statements. Check cell records...and once
+      he gets home is he hungry?', author: 5, created: ! '2017-08-24 14:28:57.058000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 115
-  fields:
-    question: 8
-    content: I certainly hope you asked him about what he was eating. Or at least
-      commented on the Thai smell. Because if he s lying about eating at the office
-      with this co-workers, then there are most certainly other things that he s keeping
-      from you. I know, as well, that if you are questioning his devotion to you after
-      so many years of marriage, then that is usually a sign that something is going
-      on with your relationship that may require a little work. Not to assume that
-      he "IS cheating, but it may certainly feel that way at times. I suggest a lot
-      one on one time to air things out .
-    author: 7
-    created: 2017-08-24 14:29:02.354000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'I certainly hope you asked him about what he was
+      eating. Or at least commented on the Thai smell. Because if he s lying about
+      eating at the office with this co-workers, then there are most certainly other
+      things that he s keeping from you. I know, as well, that if you are questioning
+      his devotion to you after so many years of marriage, then that is usually a
+      sign that something is going on with your relationship that may require a little
+      work. Not to assume that he "IS cheating, but it may certainly feel that way
+      at times. I suggest a lot one on one time to air things out .', author: 7, created: ! '2017-08-24
+      14:29:02.354000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 116
-  fields:
-    question: 8
-    content: Your husband is a reptillian shapeshifter notice the scales on his body?
-      He is going around in large groups of other reptillian shapeshifters and ripping
-      "bad" humans apart and eating them. Could he be cheating on you? Maybe reptillians
-      like to have fun with their food before they eat it. If it is gas that doesn't
-      seem like it could come from a human being but a ten foot monster you are probably
-      on to something.
-    author: 3
-    created: 2017-08-24 14:29:07.655000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'Your husband is a reptillian shapeshifter notice
+      the scales on his body? He is going around in large groups of other reptillian
+      shapeshifters and ripping "bad" humans apart and eating them. Could he be cheating
+      on you? Maybe reptillians like to have fun with their food before they eat it.
+      If it is gas that doesn''t seem like it could come from a human being but a
+      ten foot monster you are probably on to something.', author: 3, created: ! '2017-08-24
+      14:29:07.655000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 117
-  fields:
-    question: 8
-    content: It usually smells better when he's been cheating
-    author: 2
-    created: 2017-08-24 14:29:12.056000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: It usually smells better when he's been cheating,
+    author: 2, created: ! '2017-08-24 14:29:12.056000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 118
-  fields:
-    question: 8
-    content: And here I thought trolls don't make it past Level 3. Holy cow, you're
-      at Level 5.
-    author: 5
-    created: 2017-08-24 14:29:15.999000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'And here I thought trolls don''t make it past Level
+      3. Holy cow, you''re at Level 5.', author: 5, created: ! '2017-08-24 14:29:15.999000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 119
-  fields:
-    question: 8
-    content: "No offense, but that is crazy; \r\n\r\nThe smell usually doesn't affect
-      it, it's probably the sound."
-    author: 6
-    created: 2017-08-24 14:29:21.802000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "No offense, but that is crazy; \r\n\r\nThe smell
+      usually doesn't affect it, it's probably the sound.", author: 6, created: ! '2017-08-24
+      14:29:21.802000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 120
-  fields:
-    question: 8
-    content: uhh no you can't. Maybe he's just eating thai food and working overtime
-      to get more money, so he can support you and your children (sorry if you have
-      any) during this economic time period. You cant immediately assume he's cheating.
-    author: 3
-    created: 2017-08-24 14:29:26.129000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'uhh no you can''t. Maybe he''s just eating thai
+      food and working overtime to get more money, so he can support you and your
+      children (sorry if you have any) during this economic time period. You cant
+      immediately assume he''s cheating.', author: 3, created: ! '2017-08-24 14:29:26.129000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 121
-  fields:
-    question: 8
-    content: I suggest you start cooking different foods at home. Maybe if his girlfriend
-      notices a change in his fart aroma she will suspect that he's married.
-    author: 5
-    created: 2017-08-24 14:29:31.307000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: I suggest you start cooking different foods at home.
+      Maybe if his girlfriend notices a change in his fart aroma she will suspect
+      that he's married., author: 5, created: ! '2017-08-24 14:29:31.307000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 122
-  fields:
-    question: 8
-    content: The smell coming from his anus is a proof that he is cheating on you
-      with a Thai ladyboy, drunk.
-    author: 6
-    created: 2017-08-24 14:29:36.049000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'The smell coming from his anus is a proof that he
+      is cheating on you with a Thai ladyboy, drunk.', author: 6, created: ! '2017-08-24
+      14:29:36.049000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 123
-  fields:
-    question: 8
-    content: Cheating on his diet? Yes
-    author: 4
-    created: 2017-08-24 14:29:43.231000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'Cheating on his diet? Yes', author: 4, created: ! '2017-08-24
+      14:29:43.231000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 124
-  fields:
-    question: 8
-    content: It's hard to say this with a straight face - sorry, but I never thought
-      about what you are talking about. I would think it would be easier to go and
-      watch him and see where he goes on his lunch break. It would definitely be more
-      pleasant than sitting around waiting for him to pass gas.
-    author: 6
-    created: 2017-08-24 14:29:52.168000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'It''s hard to say this with a straight face - sorry,
+      but I never thought about what you are talking about. I would think it would
+      be easier to go and watch him and see where he goes on his lunch break. It would
+      definitely be more pleasant than sitting around waiting for him to pass gas.',
+    author: 6, created: ! '2017-08-24 14:29:52.168000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 125
-  fields:
-    question: 8
-    content: I'm dating three women. Every girl makes my fart smell different LOL
-      .... ahhh no lady, that will not be the cause; since he's working late the food
-      is remaining in his intestines longer which is a normal cause for a different
-      odor. I don't think he's cheating on you.
-    author: 4
-    created: 2017-08-24 14:29:57.103000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'I''m dating three women. Every girl makes my fart
+      smell different LOL .... ahhh no lady, that will not be the cause; since he''s
+      working late the food is remaining in his intestines longer which is a normal
+      cause for a different odor. I don''t think he''s cheating on you.', author: 4,
+    created: ! '2017-08-24 14:29:57.103000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 126
-  fields:
-    question: 8
-    content: You shouldn't be smelling his *** to find out whether or not he's cheating,
-      smell his cock u dumb broad.
-    author: 6
-    created: 2017-08-24 14:30:03.082000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'You shouldn''t be smelling his *** to find out whether
+      or not he''s cheating, smell his cock u dumb broad.', author: 6, created: ! '2017-08-24
+      14:30:03.082000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 127
-  fields:
-    question: 8
-    content: "ROFLMAO!!!! Where do you people come up with these questions! I'm going
-      to have to be hospitalized after this question. \r\n\r\nYou need help! Serious
-      HELP!"
-    author: 7
-    created: 2017-08-24 14:30:09.719000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "ROFLMAO!!!! Where do you people come up with these
+      questions! I'm going to have to be hospitalized after this question. \r\n\r\nYou
+      need help! Serious HELP!", author: 7, created: ! '2017-08-24 14:30:09.719000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 128
-  fields:
-    question: 8
-    content: ummmmmmmmmm given the evidence no i don't think he is cheating but he
-      may of had a tummy bug or something minor i don't think accusing him of adultery
-      is valid in this case.
-    author: 5
-    created: 2017-08-24 14:30:14.754000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: ummmmmmmmmm given the evidence no i don't think he
+      is cheating but he may of had a tummy bug or something minor i don't think accusing
+      him of adultery is valid in this case., author: 5, created: ! '2017-08-24 14:30:14.754000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 129
-  fields:
-    question: 8
-    content: "The answer is actually.. yes, i saw it on the history channel how the
-      ancient Egyptians where the first to discover this amazing ability. \r\n\r\nBuy
-      him a hat with a tiny camera inside, then you will know for sure. \r\n\r\nI'm
-      worried about you!!"
-    author: 3
-    created: 2017-08-24 14:30:21.029000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "The answer is actually.. yes, i saw it on the history
+      channel how the ancient Egyptians where the first to discover this amazing ability.
+      \r\n\r\nBuy him a hat with a tiny camera inside, then you will know for sure.
+      \r\n\r\nI'm worried about you!!", author: 3, created: ! '2017-08-24 14:30:21.029000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 130
-  fields:
-    question: 8
-    content: you been smelling to much gas lol
-    author: 4
-    created: 2017-08-24 14:30:26.789000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: you been smelling to much gas lol, author: 4, created: ! '2017-08-24
+      14:30:26.789000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 131
-  fields:
-    question: 8
-    content: "I believe in his case it would be caused be stress. Just check to see
-      that he is relaxed enough at work and at home and it should get back to normal.
-      \r\n\r\nHope it works out well."
-    author: 5
-    created: 2017-08-24 14:30:33.536000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "I believe in his case it would be caused be stress.
+      Just check to see that he is relaxed enough at work and at home and it should
+      get back to normal. \r\n\r\nHope it works out well.", author: 5, created: ! '2017-08-24
+      14:30:33.536000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 132
-  fields:
-    question: 8
-    content: "lady her husband Enga\xF1a This is Rotten"
-    author: 6
-    created: 2017-08-24 14:30:40.656000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "lady her husband Enga\xF1a This is Rotten", author: 6,
+    created: ! '2017-08-24 14:30:40.656000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 133
-  fields:
-    question: 8
-    content: All cheaters have that 'funny' smell.
-    author: 7
-    created: 2017-08-24 14:30:51.728000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: All cheaters have that 'funny' smell., author: 7,
+    created: ! '2017-08-24 14:30:51.728000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 134
-  fields:
-    question: 8
-    content: You could get a better sample of the cheating air if you begged him for
-      nightly Dutch ovens. I bet there is a book you could write if you researched
-      enough. I think you are on to something. As Toucan Sam would say - Just follow
-      your nose!
-    author: 3
-    created: 2017-08-24 14:31:34.813000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: You could get a better sample of the cheating air
+      if you begged him for nightly Dutch ovens. I bet there is a book you could write
+      if you researched enough. I think you are on to something. As Toucan Sam would
+      say - Just follow your nose!, author: 3, created: ! '2017-08-24 14:31:34.813000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 135
-  fields:
-    question: 8
-    content: "this made me laugh so freaking hard..........I'm still teary eyed because
-      it was too damn good. \r\n\r\nand you're crazy to try and detect cheating through
-      the smell of a fart."
-    author: 4
-    created: 2017-08-24 14:31:41.311000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "this made me laugh so freaking hard..........I'm
+      still teary eyed because it was too damn good. \r\n\r\nand you're crazy to try
+      and detect cheating through the smell of a fart.", author: 4, created: ! '2017-08-24
+      14:31:41.311000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 136
-  fields:
-    question: 8
-    content: re u brought up with dogs to smell on others fact . but well u r intelligent
-      in smelling others gas . y not to try others countries also
-    author: 6
-    created: 2017-08-24 14:31:50.821000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: re u brought up with dogs to smell on others fact
+      . but well u r intelligent in smelling others gas . y not to try others countries
+      also, author: 6, created: ! '2017-08-24 14:31:50.821000+00:00', correct: false,
+    votes: 1}
 - model: qs.answer
   pk: 137
-  fields:
-    question: 8
-    content: "Your question is on the front page of yahoo laughs, heres the link lmao
-      \r\nhttp://www.yahoolaughs.com/ \r\nYou should work for the csi"
-    author: 7
-    created: 2017-08-24 14:31:57.554000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "Your question is on the front page of yahoo laughs,
+      heres the link lmao \r\nhttp://www.yahoolaughs.com/ \r\nYou should work for
+      the csi", author: 7, created: ! '2017-08-24 14:31:57.554000+00:00', correct: false,
+    votes: 1}
 - model: qs.answer
   pk: 138
-  fields:
-    question: 8
-    content: You have set a new low for dumb Yahoo! questions.
-    author: 5
-    created: 2017-08-24 14:32:04.703000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: You have set a new low for dumb Yahoo! questions.,
+    author: 5, created: ! '2017-08-24 14:32:04.703000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 139
-  fields:
-    question: 8
-    content: I love how you used the word "gas" instead of "fart"
-    author: 4
-    created: 2017-08-24 14:32:11.100000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: I love how you used the word "gas" instead of "fart",
+    author: 4, created: ! '2017-08-24 14:32:11.100000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 140
-  fields:
-    question: 8
-    content: That smell means he's gay.
-    author: 3
-    created: 2017-08-24 14:32:16.652000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: That smell means he's gay., author: 3, created: ! '2017-08-24
+      14:32:16.652000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 141
-  fields:
-    question: 8
-    content: Yah I think you need to stick your nose a little closer to his anus when
-      he farts next time. I think you'll know for sure.
-    author: 5
-    created: 2017-08-24 14:32:22.383000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: Yah I think you need to stick your nose a little
+      closer to his anus when he farts next time. I think you'll know for sure., author: 5,
+    created: ! '2017-08-24 14:32:22.383000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 142
-  fields:
-    question: 8
-    content: "Ahahhahaha THIS QUESTIONS ON YAHOOLAUGH.COM \r\n\r\nFront page as well!
-      XD"
-    author: 6
-    created: 2017-08-24 14:32:27.456000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "Ahahhahaha THIS QUESTIONS ON YAHOOLAUGH.COM \r\n\r\nFront
+      page as well! XD", author: 6, created: ! '2017-08-24 14:32:27.456000+00:00',
+    correct: false, votes: 1}
 - model: qs.answer
   pk: 143
-  fields:
-    question: 8
-    content: Yes he is eating out without you...make some Thai food for him.
-    author: 7
-    created: 2017-08-24 14:32:38.924000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: Yes he is eating out without you...make some Thai
+      food for him., author: 7, created: ! '2017-08-24 14:32:38.924000+00:00', correct: false,
+    votes: 0}
 - model: qs.answer
   pk: 144
-  fields:
-    question: 8
-    content: what? he can't order take out from a Thai resturaunt? i think you might
-      be a little paranoid and are paying a little too close attention to his every
-      move just to try to catch him doing something.. be careful, because if he isn't
-      cheating and you are accusing him alot of doing so, he may just decide that
-      if he's going to get acussed he may as well just go ahead, and then who knows
-      what he may come home smelling like..
-    author: 4
-    created: 2017-08-24 14:32:44.301000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'what? he can''t order take out from a Thai resturaunt?
+      i think you might be a little paranoid and are paying a little too close attention
+      to his every move just to try to catch him doing something.. be careful, because
+      if he isn''t cheating and you are accusing him alot of doing so, he may just
+      decide that if he''s going to get acussed he may as well just go ahead, and
+      then who knows what he may come home smelling like..', author: 4, created: ! '2017-08-24
+      14:32:44.301000+00:00', correct: false, votes: -1}
 - model: qs.answer
   pk: 145
-  fields:
-    question: 8
-    content: "This just gets better and better... \r\n\r\nWho needs SNL? \r\n\r\nEdit:
-      I don't care if you give me one TD or 20 if it were possible. I haven't laughed
-      this hard in 35 years. You left yourself wide open for asking something like
-      that on Y!A. \r\nHire a detective for crying out loud! \r\n\r\nMy thanks go
-      out to all of those who posted on this question and made it worth my while to
-      stay home tonight. I just hope my tummy muscles are not so sore I can't get
-      out of bed in the morning! Muchos Gracias!"
-    author: 5
-    created: 2017-08-24 14:32:52.903000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "This just gets better and better... \r\n\r\nWho
+      needs SNL? \r\n\r\nEdit: I don't care if you give me one TD or 20 if it were
+      possible. I haven't laughed this hard in 35 years. You left yourself wide open
+      for asking something like that on Y!A. \r\nHire a detective for crying out loud!
+      \r\n\r\nMy thanks go out to all of those who posted on this question and made
+      it worth my while to stay home tonight. I just hope my tummy muscles are not
+      so sore I can't get out of bed in the morning! Muchos Gracias!", author: 5,
+    created: ! '2017-08-24 14:32:52.903000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 146
-  fields:
-    question: 8
-    content: Thai food.?.peanuts from the snack machine..or maybe bacteria in his
-      colon ,this could be health related.
-    author: 6
-    created: 2017-08-24 14:32:59.476000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'Thai food.?.peanuts from the snack machine..or maybe
+      bacteria in his colon ,this could be health related.', author: 6, created: ! '2017-08-24
+      14:32:59.476000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 147
-  fields:
-    question: 8
-    content: lmmfao you love smelling farts holy crap ew you are effin gross lady
-    author: 7
-    created: 2017-08-24 14:33:05.306000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: lmmfao you love smelling farts holy crap ew you are
+      effin gross lady, author: 7, created: ! '2017-08-24 14:33:05.306000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 148
-  fields:
-    question: 8
-    content: LMAO - It would seem to me that the only way his gas could be a telling
-      factor is if it's anal sex he's having?
-    author: 3
-    created: 2017-08-24 14:33:11.209000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'LMAO - It would seem to me that the only way his
+      gas could be a telling factor is if it''s anal sex he''s having?', author: 3,
+    created: ! '2017-08-24 14:33:11.209000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 149
-  fields:
-    question: 8
-    content: O.M.G. So this is what Yahoo Answers has come too?!?!? A question like
-      "Can I tell by the smell of my husband's gas if he has been cheating?" I fear
-      the future......
-    author: 5
-    created: 2017-08-24 14:33:17.893000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'O.M.G. So this is what Yahoo Answers has come too?!?!?
+      A question like "Can I tell by the smell of my husband''s gas if he has been
+      cheating?" I fear the future......', author: 5, created: ! '2017-08-24 14:33:17.893000+00:00',
+    correct: false, votes: 1}
 - model: qs.answer
   pk: 150
-  fields:
-    question: 8
-    content: can i get sum of that you smoking? lol
-    author: 4
-    created: 2017-08-24 14:33:24.283000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'can i get sum of that you smoking? lol', author: 4,
+    created: ! '2017-08-24 14:33:24.283000+00:00', correct: false, votes: 0}
 - model: qs.answer
   pk: 151
-  fields:
-    question: 8
-    content: ummmmm weird!
-    author: 6
-    created: 2017-08-24 14:33:29.566000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: ummmmm weird!, author: 6, created: ! '2017-08-24
+      14:33:29.566000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 152
-  fields:
-    question: 8
-    content: What is this some kind of joke? Get control of your jealousy lady.
-    author: 7
-    created: 2017-08-24 14:33:37.864000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'What is this some kind of joke? Get control of your
+      jealousy lady.', author: 7, created: ! '2017-08-24 14:33:37.864000+00:00', correct: false,
+    votes: 2}
 - model: qs.answer
   pk: 153
-  fields:
-    question: 8
-    content: "OMG........ Thai food..... He MUST be cheating!! .... \r\n\r\nWTF are
-      you thinking? Of course this is the most ludicrous thing I have ever heard."
-    author: 4
-    created: 2017-08-24 14:33:46.264000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "OMG........ Thai food..... He MUST be cheating!!
+      .... \r\n\r\nWTF are you thinking? Of course this is the most ludicrous thing
+      I have ever heard.", author: 4, created: ! '2017-08-24 14:33:46.264000+00:00',
+    correct: false, votes: 0}
 - model: qs.answer
   pk: 154
-  fields:
-    question: 8
-    content: Only if he has been cheating, with a guy.
-    author: 3
-    created: 2017-08-24 14:33:52.260000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'Only if he has been cheating, with a guy.', author: 3,
+    created: ! '2017-08-24 14:33:52.260000+00:00', correct: false, votes: 1}
 - model: qs.answer
   pk: 155
-  fields:
-    question: 8
-    content: Definitely. you should kill yourself.
-    author: 2
-    created: 2017-08-24 14:34:00.491000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: Definitely. you should kill yourself., author: 2,
+    created: ! '2017-08-24 14:34:00.491000+00:00', correct: false, votes: 2}
 - model: qs.answer
   pk: 156
-  fields:
-    question: 8
-    content: "wtf. you really shouldn't bring up the gas thing again. it just makes
-      you sound nuts. what do his farts have to do with sleeping with someone? \r\nthere's
-      no buts about it (hehe) you sound crazy"
-    author: 4
-    created: 2017-08-24 14:34:07.197000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: "wtf. you really shouldn't bring up the gas thing
+      again. it just makes you sound nuts. what do his farts have to do with sleeping
+      with someone? \r\nthere's no buts about it (hehe) you sound crazy", author: 4,
+    created: ! '2017-08-24 14:34:07.197000+00:00', correct: false, votes: 2}
 - model: qs.answer
   pk: 157
-  fields:
-    question: 8
-    content: Congratulations! You are a winner! The award for the dumbest question
-      of the evening, and quite possibly the entire year, goes to you!!!! Your reward
-      is a sealed zip-lock bag filled with the smells of sex farts, and the fungus
-      that grows in shoes/boots. Do you have any words for the audience tonight before
-      you except this high honor/award??
-    author: 5
-    created: 2017-08-24 14:34:21.806000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: 'Congratulations! You are a winner! The award for
+      the dumbest question of the evening, and quite possibly the entire year, goes
+      to you!!!! Your reward is a sealed zip-lock bag filled with the smells of sex
+      farts, and the fungus that grows in shoes/boots. Do you have any words for the
+      audience tonight before you except this high honor/award??', author: 5, created: ! '2017-08-24
+      14:34:21.806000+00:00', correct: false, votes: 3}
 - model: qs.answer
   pk: 158
-  fields:
-    question: 8
-    content: check your medication.......
-    author: 6
-    created: 2017-08-24 14:34:28.355000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: check your medication......., author: 6, created: ! '2017-08-24
+      14:34:28.355000+00:00', correct: false, votes: 2}
 - model: qs.answer
   pk: 159
-  fields:
-    question: 8
-    content: OMG!!!!!!!!!
-    author: 7
-    created: 2017-08-24 14:34:37.872000+00:00
-    correct: false
-    votes: 0
-    voters: []
+  fields: {question: 8, content: OMG!!!!!!!!!, author: 7, created: ! '2017-08-24 14:34:37.872000+00:00',
+    correct: false, votes: -3}
