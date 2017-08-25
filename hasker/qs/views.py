@@ -62,7 +62,7 @@ class QuestionView(View):
     def get(self, request, *argc, **kwargs):
         slug = kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
-        answers = question.answers.order_by('-votes').order_by('-created')
+        answers = question.answers.order_by('-votes', '-created')
         form = AnswerForm()
         return render(request, 'question.html', {
             'question': question,

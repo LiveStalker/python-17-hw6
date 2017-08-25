@@ -4,13 +4,13 @@
     password: pbkdf2_sha256$36000$hKW7PtqIVnuc$uxG5qqbCUFEuqXV6MaRSu/89U7xR73FuYYjDF6h914M=
     last_login: 2017-08-18 11:07:07.371000+00:00
     is_superuser: false
-    username: Basil
+    username: hasker
     first_name: ''
     last_name: ''
-    email: user@example.com
+    email: hasker@example.com
     is_staff: false
     is_active: true
-    date_joined: 2017-08-18 11:07:07.126000+00:00
+    date_joined: 2017-06-18 11:07:07.126000+00:00
     groups: []
     user_permissions: []
 - model: auth.user
@@ -19,10 +19,10 @@
     password: pbkdf2_sha256$36000$hKW7PtqIVnuc$uxG5qqbCUFEuqXV6MaRSu/89U7xR73FuYYjDF6h914M=
     last_login: 2017-08-18 11:07:07.371000+00:00
     is_superuser: false
-    username: Peter
+    username: basil
     first_name: ''
     last_name: ''
-    email: user@example.com
+    email: basil@example.com
     is_staff: false
     is_active: true
     date_joined: 2017-08-18 11:07:07.126000+00:00
@@ -34,10 +34,10 @@
     password: pbkdf2_sha256$36000$hKW7PtqIVnuc$uxG5qqbCUFEuqXV6MaRSu/89U7xR73FuYYjDF6h914M=
     last_login: 2017-08-18 11:07:07.371000+00:00
     is_superuser: false
-    username: Gregory
+    username: peter
     first_name: ''
     last_name: ''
-    email: user@example.com
+    email: peter@example.com
     is_staff: false
     is_active: true
     date_joined: 2017-08-18 11:07:07.126000+00:00
@@ -49,10 +49,10 @@
     password: pbkdf2_sha256$36000$hKW7PtqIVnuc$uxG5qqbCUFEuqXV6MaRSu/89U7xR73FuYYjDF6h914M=
     last_login: 2017-08-18 11:07:07.371000+00:00
     is_superuser: false
-    username: Alexey
+    username: gregory
     first_name: ''
     last_name: ''
-    email: user@example.com
+    email: gregory@example.com
     is_staff: false
     is_active: true
     date_joined: 2017-08-18 11:07:07.126000+00:00
@@ -64,10 +64,55 @@
     password: pbkdf2_sha256$36000$hKW7PtqIVnuc$uxG5qqbCUFEuqXV6MaRSu/89U7xR73FuYYjDF6h914M=
     last_login: 2017-08-18 11:07:07.371000+00:00
     is_superuser: false
-    username: Stepan
+    username: alexey
     first_name: ''
     last_name: ''
-    email: user@example.com
+    email: alexey@example.com
+    is_staff: false
+    is_active: true
+    date_joined: 2017-08-18 11:07:07.126000+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 6
+  fields:
+    password: pbkdf2_sha256$36000$hKW7PtqIVnuc$uxG5qqbCUFEuqXV6MaRSu/89U7xR73FuYYjDF6h914M=
+    last_login: 2017-08-18 11:07:07.371000+00:00
+    is_superuser: false
+    username: stepan
+    first_name: ''
+    last_name: ''
+    email: stepan@example.com
+    is_staff: false
+    is_active: true
+    date_joined: 2017-08-18 11:07:07.126000+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 6
+  fields:
+    password: pbkdf2_sha256$36000$hKW7PtqIVnuc$uxG5qqbCUFEuqXV6MaRSu/89U7xR73FuYYjDF6h914M=
+    last_login: 2017-08-18 11:07:07.371000+00:00
+    is_superuser: false
+    username: bob
+    first_name: ''
+    last_name: ''
+    email: bob@example.com
+    is_staff: false
+    is_active: true
+    date_joined: 2017-08-18 11:07:07.126000+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 7
+  fields:
+    password: pbkdf2_sha256$36000$hKW7PtqIVnuc$uxG5qqbCUFEuqXV6MaRSu/89U7xR73FuYYjDF6h914M=
+    last_login: 2016-08-18 11:07:07.371000+00:00
+    is_superuser: false
+    username: alise
+    first_name: ''
+    last_name: ''
+    email: alise@example.com
     is_staff: false
     is_active: true
     date_joined: 2017-08-18 11:07:07.126000+00:00
