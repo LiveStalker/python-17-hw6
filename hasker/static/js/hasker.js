@@ -20,12 +20,33 @@ $(document).ready(function () {
     $('a.answer').click(function (event) {
         console.log($(this).data('id'));
         id = $(this).data('id');
+        vote = $(this).data('vote');
         $.ajax({
                 beforeSend: function (xhr, settings) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken);
                 },
                 type: 'POST',
-                url: '/vote/answer/' + id + '/'
+                data: {'vote': vote},
+                url: '/vote/answer/' + id + '/',
+                error: function (xhr, status, exception) {
+                    var msg = '';
+                    if (xhr.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (xhr.status === 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (xhr.status === 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + xhr.responseText;
+                    }
+                    //$('#post').html(msg);
+                }
             }
         );
     });

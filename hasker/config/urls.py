@@ -35,5 +35,5 @@ urlpatterns = [
     url(r'answer_correct/(?P<id>\d+)/$', qs_views.AnswerCorrect.as_view(), name='answer_correct'),
 
     url(r'vote/question/(?P<id>\d+)/$', vote_views.vote_question, name='vote_question'),
-    url(r'vote/answer/(?P<id>\d+)/$', vote_views.vote_question, name='vote_answer'),
+    url(r'vote/answer/(?P<id>\d+)/$', vote_views.vote_answer, name='vote_answer'),
 ]
