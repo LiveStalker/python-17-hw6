@@ -6,9 +6,11 @@
             <h2>{{ question.title }}</h2>
             <div class="row">
                 <div class="col-sm-1" align="center">
-                    <p><a href="#"><span class="glyphicon glyphicon-menu-up"></span></a></p>
-                    <p>{{ question.votes }}</p>
-                    <p><a href="#"><span class="glyphicon glyphicon-menu-down"></span></a></p>
+                    <p><a href="#" class="question" data-id="{{ question.id }}" data-vote="up"><span
+                            class="glyphicon glyphicon-menu-up"></span></a></p>
+                    <p class="question-votes-{{ question.id }}">{{ question.votes }}</p>
+                    <p><a href="#" class="question" data-id="{{ question.id }}" data-vote="down"><span
+                            class="glyphicon glyphicon-menu-down"></span></a></p>
                 </div>
                 <div class="col-sm-11">
                     <p>{{ question.content }}</p>
@@ -28,10 +30,11 @@
                 <div class="row">
                     <div class="col-sm-1" align="center">
                         <!--TODO disable for anonimus-->
-                        <p><a href="#" class="answer" data-id="{{ a.id }}" data-vote="up"><span
+                        <a name="{{ a.id }}"></a>
+                        <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="up"><span
                                 class="glyphicon glyphicon-menu-up"></span></a></p>
                         <p class="answer-votes-{{ a.id }}">{{ a.votes }}</p>
-                        <p><a href="#" class="answer" data-id="{{ a.id }}" data-vote="down"><span
+                        <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="down"><span
                                 class="glyphicon glyphicon-menu-down"></span></a></p>
                         {% if question.author == user and not question.is_correct_answered %}
                             <p><a href="{{ a.get_correct_url }}"><span
