@@ -28,6 +28,11 @@ $(document).ready(function () {
                 type: 'POST',
                 data: {'vote': vote},
                 url: '/vote/answer/' + id + '/',
+                success: function (data, status, xhr) {
+                    var votes = data['result'];
+                    var votes_tag = $('p.answer-votes-' + id);
+                    votes_tag.text(votes);
+                },
                 error: function (xhr, status, exception) {
                     var msg = '';
                     if (xhr.status === 0) {

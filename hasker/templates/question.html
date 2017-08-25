@@ -30,7 +30,7 @@
                         <!--TODO disable for anonimus-->
                         <p><a href="#" class="answer" data-id="{{ a.id }}" data-vote="up"><span
                                 class="glyphicon glyphicon-menu-up"></span></a></p>
-                        <p>{{ a.votes }}</p>
+                        <p class="answer-votes-{{ a.id }}">{{ a.votes }}</p>
                         <p><a href="#" class="answer" data-id="{{ a.id }}" data-vote="down"><span
                                 class="glyphicon glyphicon-menu-down"></span></a></p>
                         {% if question.author == user and not question.is_correct_answered %}
