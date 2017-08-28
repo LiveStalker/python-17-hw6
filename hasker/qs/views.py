@@ -62,7 +62,7 @@ class QuestionView(View):
     def get(self, request, *argc, **kwargs):
         slug = kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
-        answers = question.answers.order_by('-votes', '-created')
+        answers = question.answers.order_by('-correct', '-votes', '-created')
         form = AnswerForm()
         return render(request, 'question.html', {
             'question': question,
@@ -86,14 +86,17 @@ class QuestionView(View):
 
 
 class AnswerCorrect(LoginRequiredMixin, View):
-    # TODO make ajax post
     http_method_names = ('get',)
 
     def get(self, request, *argc, **kwargs):
         answer_id = kwargs['id']
         answer = get_object_or_404(Answer, id=answer_id)
+        # TODO if question have already correct answer
         question = answer.question
-        if request.user == question.author and not question.is_correct_answered:
-            answer.correct = True
+        if request.user == question.author:
+            if not question.is_correct_answered:
+                answer.correct = True
+            else:
+                answer.correct = False
             answer.save()
         return redirect('question', slug=question.slug)
