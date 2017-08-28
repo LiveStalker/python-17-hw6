@@ -49,9 +49,11 @@ class AskQuestionView(LoginRequiredMixin, View):
             question.slug = slugify(question.title)
             question.save()
             for word in form.cleaned_data.get('tags'):
-                # TODO if tag exist
-                tag = Tag(word=word)
-                tag.save()
+                try:
+                    tag = Tag.objects.get(word=word)
+                except Tag.DoesNotExist:
+                    tag = Tag(word=word)
+                    tag.save()
                 question.tags.add(tag)
             question.save()
             return redirect('question', slug=question.slug)
