@@ -36,12 +36,18 @@
                         <p class="answer-votes-{{ a.id }}">{{ a.votes }}</p>
                         <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="down"><span
                                 class="glyphicon glyphicon-menu-down"></span></a></p>
+                        <!--check question as correct-->
                         {% if question.author == user and not question.is_correct_answered %}
                             <p><a href="{{ a.get_correct_url }}"><span
                                     class="glyphicon glyphicon-star-empty"></span></a></p>
                         {% endif %}
                         {% if a.correct %}
-                            <p><span class="glyphicon glyphicon-star"></span></p>
+                            {% if question.author == user %}
+                                <p><a href="{{ a.get_correct_url }}"><span
+                                        class="glyphicon glyphicon-star"></span></a></p>
+                            {% else %}
+                                <p><span class="glyphicon glyphicon-star"></span></p>
+                            {% endif %}
                         {% endif %}
                     </div>
                     <div class="col-sm-11">
