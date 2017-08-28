@@ -5,7 +5,7 @@ from .models import Question, Tag, Answer
 class TagsField(forms.CharField):
     def to_python(self, value):
         tags = [el.strip() for el in value.split(',')]
-        return tags
+        return tags[:3]
 
 
 class AskQuestionForm(forms.ModelForm):
