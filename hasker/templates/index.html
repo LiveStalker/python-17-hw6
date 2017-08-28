@@ -27,7 +27,11 @@
                     </div>
                     <div class="col-sm-4 col-sm-offset-1" align="left">
                         <h4><a href="{{ q.get_absolute_url }}">{{ q.title }}</a></h4>
-                        tags
+                        <p>
+                            {% for tag in q.tags.all %}
+                                <a class="btn btn-info btn-xs" href="#" role="button">{{ tag.word }}</a>
+                            {% endfor %}
+                        </p>
                     </div>
                     <div class="col-sm-3">
                         <p class="text-center"><a href="/profile/{{ q.author }}/">{{ q.author }}</a></p>
