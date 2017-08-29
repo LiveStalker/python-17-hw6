@@ -1,5 +1,6 @@
 CREATE DATABASE hasker;
-CREATE USER hasker WITH PASSWORD '';
+--User password only for testing
+CREATE USER hasker WITH PASSWORD 'hasker';
 
 ALTER ROLE hasker SET client_encoding TO 'utf8';
 ALTER ROLE hasker SET default_transaction_isolation TO 'read committed';
