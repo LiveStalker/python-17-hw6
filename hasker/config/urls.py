@@ -16,11 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 from signup.forms import LoginForm
 from signup import views as signup_views
 from qs import views as qs_views
 from votes import views as vote_views
+from user_settings import views as user_settings_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -36,4 +39,6 @@ urlpatterns = [
 
     url(r'^vote/question/(?P<id>\d+)/$', vote_views.vote_question, name='vote_question'),
     url(r'^vote/answer/(?P<id>\d+)/$', vote_views.vote_answer, name='vote_answer'),
-]
+
+    url(r'^settings/$', user_settings_views.UserSettingsView.as_view(), name='user_settings'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
