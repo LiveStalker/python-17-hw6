@@ -1,0 +1,7 @@
+.avatar-img {
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+}
