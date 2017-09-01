@@ -28,6 +28,7 @@ from user_settings import views as user_settings_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', qs_views.QuestionList.as_view(), name='index'),
+    url(r'^tag/(?P<tag>[\w-]+)/$', qs_views.QuestionList.as_view(), name='index'),
 
     url(r'^login/$', auth_views.login, {'template_name': 'login.html', 'form_class': LoginForm}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),

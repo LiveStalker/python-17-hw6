@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-8">
-            <h3><a href="{% url 'index' %}">New questions</a> | <a href="{% url 'index' %}?order=votes">Hot
+            <h3><a href="{{ request.path }}">New questions</a> | <a href="?order=votes">Hot
                 questions</a></h3>
         </div>
         <div class="col-sm-4">
@@ -29,7 +29,7 @@
                         <h4><a href="{{ q.get_absolute_url }}">{{ q.title }}</a></h4>
                         <p>
                             {% for tag in q.tags.all %}
-                                <a class="btn btn-info btn-xs" href="#" role="button">{{ tag.word }}</a>
+                                <a class="btn btn-info btn-xs" href="/tag/{{ tag.word }}/" role="button">{{ tag.word }}</a>
                             {% endfor %}
                         </p>
                     </div>

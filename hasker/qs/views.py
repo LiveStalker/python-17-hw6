@@ -15,6 +15,7 @@ from .models import Question, Tag, Answer
 
 
 class QuestionList(ListView):
+    """List of questions for index page."""
     template_name = 'index.html'
     model = Question
     context_object_name = 'questions'
@@ -26,6 +27,8 @@ class QuestionList(ListView):
 
     def get_queryset(self):
         q = super(QuestionList, self).get_queryset()
+        if 'tag' in self.kwargs:
+            q = q.filter(tags__word=self.kwargs['tag'])
         return q.annotate(answer_count=Count('answers'))
 
 
