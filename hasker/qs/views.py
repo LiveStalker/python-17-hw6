@@ -19,6 +19,7 @@ class QuestionList(ListView):
     template_name = 'index.html'
     model = Question
     context_object_name = 'questions'
+    paginate_by = 2
 
     def get_ordering(self):
         order = self.request.GET.get('order', 'created')
