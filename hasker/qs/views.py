@@ -9,6 +9,7 @@ from django.utils.decorators import method_decorator
 from django.utils.text import slugify
 from django.shortcuts import get_object_or_404
 from django.db.models import Count
+from django.conf import settings
 
 from .forms import AskQuestionForm, AnswerForm
 from .models import Question, Tag, Answer
@@ -19,7 +20,7 @@ class QuestionList(ListView):
     template_name = 'index.html'
     model = Question
     context_object_name = 'questions'
-    paginate_by = 2
+    paginate_by = settings.QUESTIONS_PAGE_SIZE
 
     def get_ordering(self):
         order = self.request.GET.get('order', 'created')
