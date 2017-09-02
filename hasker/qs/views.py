@@ -70,17 +70,28 @@ class AskQuestionView(LoginRequiredMixin, View):
         return render(request, 'ask.html', {'form': form})
 
 
-class QuestionView(View):
-    def get(self, request, *argc, **kwargs):
-        slug = kwargs.get('slug')
+class QuestionView(ListView):
+    template_name = 'question.html'
+    model = Answer
+    context_object_name = 'answers'
+    paginate_by = settings.ANSWERS_PAGE_SIZE
+
+    def get_ordering(self):
+        return ['-correct', '-votes', '-created']
+
+    def get_context_data(self, **kwargs):
+        ctx = super(QuestionView, self).get_context_data(**kwargs)
+        slug = self.kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
-        answers = question.answers.order_by('-correct', '-votes', '-created')
         form = AnswerForm()
-        return render(request, 'question.html', {
-            'question': question,
-            'answers': answers,
-            'form': form
-        })
+        ctx['question'] = question
+        ctx['form'] = form
+        return ctx
+
+    def get_queryset(self):
+        slug = self.kwargs.get('slug')
+        question = get_object_or_404(Question, slug=slug)
+        return Answer.objects.filter(question=question)
 
     @method_decorator(login_required)
     def post(self, request, *argc, **kwargs):
