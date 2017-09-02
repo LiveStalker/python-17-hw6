@@ -29,7 +29,8 @@
                         <h4><a href="{{ q.get_absolute_url }}">{{ q.title }}</a></h4>
                         <p>
                             {% for tag in q.tags.all %}
-                                <a class="btn btn-info btn-xs" href="/tag/{{ tag.word }}/" role="button">{{ tag.word }}</a>
+                                <a class="btn btn-info btn-xs" href="/tag/{{ tag.word }}/"
+                                   role="button">{{ tag.word }}</a>
                             {% endfor %}
                         </p>
                     </div>
@@ -43,4 +44,25 @@
         <div class="col-sm-4">
         </div>
     </div>
+    {% if is_paginated %}
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}&order={{ order }}">&laquo;</a></li>
+            {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+            {% for i in paginator.page_range %}
+                {% if page_obj.number == i %}
+                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                    <li><a href="?page={{ i }}&order={{ order }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}&order={{ order }}">&raquo;</a></li>
+            {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+        </ul>
+    {% endif %}
 {% endblock %}

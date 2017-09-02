@@ -32,6 +32,11 @@ class QuestionList(ListView):
             q = q.filter(tags__word=self.kwargs['tag'])
         return q.annotate(answer_count=Count('answers'))
 
+    def get_context_data(self, **kwargs):
+        ctx = super(QuestionList, self).get_context_data(**kwargs)
+        ctx['order'] = self.request.GET.get('order', 'created')
+        return ctx
+
 
 class AskQuestionView(LoginRequiredMixin, View):
     login_url = '/login/'
