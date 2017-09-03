@@ -24,6 +24,7 @@ from signup import views as signup_views
 from qs import views as qs_views
 from votes import views as vote_views
 from user_settings import views as user_settings_views
+from search import views as search_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -42,4 +43,6 @@ urlpatterns = [
     url(r'^vote/answer/(?P<id>\d+)/$', vote_views.vote_answer, name='vote_answer'),
 
     url(r'^settings/$', user_settings_views.UserSettingsView.as_view(), name='user_settings'),
+
+    url(r'^search/$', search_views.SearchView.as_view(), name='search'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

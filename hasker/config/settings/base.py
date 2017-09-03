@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'signup',
     'qs',
     'votes',
-    'user_settings'
+    'user_settings',
+    'search'
 ]
 
 MIDDLEWARE = [
@@ -152,4 +153,5 @@ LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
 
 QUESTIONS_PAGE_SIZE = 3
+SEARCH_PAGE_SIZE = 3
 ANSWERS_PAGE_SIZE = 10

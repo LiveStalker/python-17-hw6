@@ -3,8 +3,7 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-8">
-            <h3><a href="{{ request.path }}">New questions</a> | <a href="?order=votes">Hot
-                questions</a></h3>
+            <h3>Search result</h3>
         </div>
         <div class="col-sm-4">
             {% if user.is_authenticated %}
@@ -14,31 +13,35 @@
     </div>
     <div class="row">
         <div class="col-sm-7">
-            {% for q in questions %}
-                <div class="row">
-                    <div class="col-sm-2" align="center">
-                        <h5>{{ q.votes }}</h5>
-                        <h5>Votes</h5>
+            {% if questions %}
+                {% for q in questions %}
+                    <div class="row">
+                        <div class="col-sm-2" align="center">
+                            <h5>{{ q.votes }}</h5>
+                            <h5>Votes</h5>
+                        </div>
+                        <div class="col-sm-2" align="center">
+                            <h5>{{ q.answer_count }}</h5>
+                            <h5>Answers</h5>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-1" align="left">
+                            <h4><a href="{{ q.get_absolute_url }}">{{ q.title }}</a></h4>
+                            <p>
+                                {% for tag in q.tags.all %}
+                                    <a class="btn btn-info btn-xs" href="/tag/{{ tag.word }}/"
+                                       role="button">{{ tag.word }}</a>
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p class="text-center"><a href="/profile/{{ q.author }}/">{{ q.author }}</a></p>
+                            <p class="text-center">{{ q.created | naturaltime }}</p>
+                        </div>
                     </div>
-                    <div class="col-sm-2" align="center">
-                        <h5>{{ q.answer_count }}</h5>
-                        <h5>Answers</h5>
-                    </div>
-                    <div class="col-sm-4 col-sm-offset-1" align="left">
-                        <h4><a href="{{ q.get_absolute_url }}">{{ q.title }}</a></h4>
-                        <p>
-                            {% for tag in q.tags.all %}
-                                <a class="btn btn-info btn-xs" href="/tag/{{ tag.word }}/"
-                                   role="button">{{ tag.word }}</a>
-                            {% endfor %}
-                        </p>
-                    </div>
-                    <div class="col-sm-3">
-                        <p class="text-center"><a href="/profile/{{ q.author }}/">{{ q.author }}</a></p>
-                        <p class="text-center">{{ q.created | naturaltime }}</p>
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                <p>No results!</p>
+            {% endif %}
         </div>
         <div class="col-sm-4">
         </div>
