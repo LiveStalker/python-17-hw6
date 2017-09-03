@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'signup',
     'qs',
     'votes',
-    'user_settings'
+    'user_settings',
+    'search'
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = root('media')
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+
+QUESTIONS_PAGE_SIZE = 3
+SEARCH_PAGE_SIZE = 3
+ANSWERS_PAGE_SIZE = 10

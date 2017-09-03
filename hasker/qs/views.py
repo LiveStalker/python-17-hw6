@@ -9,15 +9,18 @@ from django.utils.decorators import method_decorator
 from django.utils.text import slugify
 from django.shortcuts import get_object_or_404
 from django.db.models import Count
+from django.conf import settings
 
 from .forms import AskQuestionForm, AnswerForm
 from .models import Question, Tag, Answer
 
 
 class QuestionList(ListView):
+    """List of questions for index page."""
     template_name = 'index.html'
     model = Question
     context_object_name = 'questions'
+    paginate_by = settings.QUESTIONS_PAGE_SIZE
 
     def get_ordering(self):
         order = self.request.GET.get('order', 'created')
@@ -26,7 +29,14 @@ class QuestionList(ListView):
 
     def get_queryset(self):
         q = super(QuestionList, self).get_queryset()
+        if 'tag' in self.kwargs:
+            q = q.filter(tags__word=self.kwargs['tag'])
         return q.annotate(answer_count=Count('answers'))
+
+    def get_context_data(self, **kwargs):
+        ctx = super(QuestionList, self).get_context_data(**kwargs)
+        ctx['order'] = self.request.GET.get('order', 'created')
+        return ctx
 
 
 class AskQuestionView(LoginRequiredMixin, View):
@@ -60,17 +70,28 @@ class AskQuestionView(LoginRequiredMixin, View):
         return render(request, 'ask.html', {'form': form})
 
 
-class QuestionView(View):
-    def get(self, request, *argc, **kwargs):
-        slug = kwargs.get('slug')
+class QuestionView(ListView):
+    template_name = 'question.html'
+    model = Answer
+    context_object_name = 'answers'
+    paginate_by = settings.ANSWERS_PAGE_SIZE
+
+    def get_ordering(self):
+        return ['-correct', '-votes', '-created']
+
+    def get_context_data(self, **kwargs):
+        ctx = super(QuestionView, self).get_context_data(**kwargs)
+        slug = self.kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
-        answers = question.answers.order_by('-correct', '-votes', '-created')
         form = AnswerForm()
-        return render(request, 'question.html', {
-            'question': question,
-            'answers': answers,
-            'form': form
-        })
+        ctx['question'] = question
+        ctx['form'] = form
+        return ctx
+
+    def get_queryset(self):
+        slug = self.kwargs.get('slug')
+        question = get_object_or_404(Question, slug=slug)
+        return Answer.objects.filter(question=question)
 
     @method_decorator(login_required)
     def post(self, request, *argc, **kwargs):

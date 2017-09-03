@@ -24,10 +24,12 @@ from signup import views as signup_views
 from qs import views as qs_views
 from votes import views as vote_views
 from user_settings import views as user_settings_views
+from search import views as search_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', qs_views.QuestionList.as_view(), name='index'),
+    url(r'^tag/(?P<tag>[\w-]+)/$', qs_views.QuestionList.as_view(), name='index'),
 
     url(r'^login/$', auth_views.login, {'template_name': 'login.html', 'form_class': LoginForm}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
@@ -41,4 +43,6 @@ urlpatterns = [
     url(r'^vote/answer/(?P<id>\d+)/$', vote_views.vote_answer, name='vote_answer'),
 
     url(r'^settings/$', user_settings_views.UserSettingsView.as_view(), name='user_settings'),
+
+    url(r'^search/$', search_views.SearchView.as_view(), name='search'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
