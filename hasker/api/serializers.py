@@ -19,3 +19,13 @@ class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = ('id', 'title', 'author', 'created', 'votes', 'answer_count', 'tags')
+
+
+class AnswerSerializer(serializers.ModelSerializer):
+    author = serializers.CharField(source='author.username', read_only=True)
+    votes = serializers.IntegerField(read_only=True)
+    correct = serializers.BooleanField(read_only=True)
+
+    class Meta:
+        model = Answer
+        fields = ('id', 'content', 'author', 'created', 'correct', 'votes')
