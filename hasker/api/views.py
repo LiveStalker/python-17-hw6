@@ -24,6 +24,9 @@ class QuestionViewSet(viewsets.ModelViewSet):
         q = Question.objects.all()
         return q.annotate(answer_count=Count('answers'))
 
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
 
 class TrendingList(generics.ListAPIView):
     serializer_class = QuestionSerializer
@@ -54,6 +57,9 @@ class AnswerViewSet(viewsets.ModelViewSet):
     serializer_class = AnswerSerializer
     pagination_class = AnswerPagination
     queryset = Answer.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
 
 
 class TagPagination(pagination.PageNumberPagination):
