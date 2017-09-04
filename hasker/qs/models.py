@@ -33,6 +33,12 @@ class Question(models.Model):
     def is_correct_answered(self):
         return self.answers.filter(correct=True).count()
 
+    def __str__(self):
+        return self.title.encode('UTF-8')
+
+    def __unicode__(self):
+        return self.title[:50]
+
 
 class AnswerVotedUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
