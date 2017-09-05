@@ -52,7 +52,7 @@ docker-bash: docker-build
 	docker run --rm -it -p 8080:80 $(IMAGE_NAME) /bin/bash
 
 .PHONY: in-env
-in-env: in-install-pkg
+in-env: in-install-pkg in-configs
 
 .PHONY: in-install-pkg
 in-install-pkg:
@@ -71,3 +71,10 @@ in-install-pkg:
 	python /tmp/get-pip.py
 	pip install -r requirements.txt
 	pip install uwsgi
+
+.PHONY: in-configs
+in-configs:
+	@-adduser -r -s /bin/false -d /python-17-hw6 hasker || true
+	@-usermod -a -G hasker nginx || true
+	@-rm /etc/nginx/conf.d/default.conf || true
+	cp ./etc/postgresql-setup /usr/bin/postgresql-setup
