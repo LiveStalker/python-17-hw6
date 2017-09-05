@@ -12,7 +12,7 @@ docker run --rm -it -p 8080:80 centos:latest /bin/bash
 * Внутри контейнера выполните команды:
 ```bash
 yum install make git
-https://github.com/LiveStalker/python-17-hw6.git
+git clone https://github.com/LiveStalker/python-17-hw6.git
 cd python-17-hw6 
 make stage
 ```

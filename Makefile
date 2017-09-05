@@ -51,7 +51,7 @@ docker-build:
 docker-bash: docker-build
 	docker run --rm -it -p 8080:80 $(IMAGE_NAME) /bin/bash
 
-.PHONY: in-env:
+.PHONY: in-env
 in-env: in-install-pkg
 
 .PHONY: in-install-pkg
@@ -68,3 +68,6 @@ in-install-pkg:
         nginx \
         postgresql-server
     wget -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py
+    python /tmp/get-pip.py
+    pip install -r requirements.txt
+    pip install uwsgi
