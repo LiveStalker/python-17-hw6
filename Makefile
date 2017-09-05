@@ -32,6 +32,7 @@ start-nginx:
 
 .PHONY: start-hasker
 start-hasker: load-fixtures collect-static
+	cp -n ./etc/hasker.ini /app/hasker.ini
 	@echo "Starting uWSGI application"
 	@uwsgi --ini /app/hasker.ini
 
