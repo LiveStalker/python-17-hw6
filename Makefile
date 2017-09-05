@@ -1,9 +1,9 @@
 MANAGE_PY = ./hasker/manage.py
 
 IMAGE_NAME = hasker
+export PG_CONFDIR=/var/lib/pgsql/data
 # Do not do it in production :)
 # Keep secrets in secret
-export PG_CONFDIR=/var/lib/pgsql/data
 export HASKER_DB_HOST=localhost
 export HASKER_DB_NAME=hasker
 export HASKER_DB_USER=hasker
@@ -16,6 +16,7 @@ stage: in-env prepare-db start-postgres start-nginx start-hasker
 
 .PHONY: start-postgres
 start-postgres:
+	@-sudo -u postgres PGDATA=/var/lib/pgsql/data pg_ctl stop || true
 	@echo "Starting postgres"
 	@sudo -u postgres -H postgres \
 	-c config_file=${PG_CONFDIR}/postgresql.conf \
@@ -25,6 +26,7 @@ start-postgres:
 
 .PHONY: start-nginx
 start-nginx:
+	@-nginx -s stop || true
 	@echo "Starting nginx"
 	@nginx
 
@@ -43,6 +45,7 @@ prepare-db:
 .PHONY: load-fixtures
 load-fixtures:
 	@echo "Migrate..."
+	@cd hasker; python manage.py flush --no-input
 	@cd hasker; python manage.py migrate
 	@echo "Load fixtures..."
 	@cd hasker; python manage.py loaddata ../fixtures/users.yaml > /dev/null 2>&1
