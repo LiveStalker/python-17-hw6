@@ -118,3 +118,24 @@
     date_joined: 2017-08-18 11:07:07.126000+00:00
     groups: []
     user_permissions: []
+- model: signup.userprofile
+  pk: 2
+  fields: {user: 1, avatar: uploads/hasker.jpg}
+- model: signup.userprofile
+  pk: 3
+  fields: {user: 2, avatar: uploads/basil.jpg}
+- model: signup.userprofile
+  pk: 4
+  fields: {user: 3, avatar: uploads/peter.jpg}
+- model: signup.userprofile
+  pk: 5
+  fields: {user: 4, avatar: uploads/gregory.jpg}
+- model: signup.userprofile
+  pk: 6
+  fields: {user: 5, avatar: uploads/alexey.jpg}
+- model: signup.userprofile
+  pk: 7
+  fields: {user: 6, avatar: uploads/bob.jpg}
+- model: signup.userprofile
+  pk: 8
+  fields: {user: 7, avatar: uploads/alise.jpg}

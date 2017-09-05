@@ -27,7 +27,7 @@ start-postgres:
 .PHONY: start-nginx
 start-nginx:
 	cp -n ./etc/nginx-hasker.conf /etc/nginx/conf.d/
-	@-nginx -s stop || true
+	@-nginx -s quit || true
 	@echo "Starting nginx"
 	@nginx
 
