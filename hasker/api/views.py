@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.conf import settings
 from django.db.models import Count, Q
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, generics
 from rest_framework import pagination
 from qs.models import Question, Answer, Tag
@@ -51,6 +52,15 @@ class AnswerPagination(pagination.PageNumberPagination):
     page_size = settings.ANSWERS_PAGE_SIZE
     page_size_query_param = 'page_size'
     max_page_size = 20
+
+
+class QuestionAnswersList(generics.ListAPIView):
+    serializer_class = AnswerSerializer
+    pagination_class = AnswerPagination
+
+    def get_queryset(self):
+        question = get_object_or_404(Question, id=self.kwargs['question_id'])
+        return Answer.objects.filter(question=question)
 
 
 class AnswerViewSet(viewsets.ModelViewSet):

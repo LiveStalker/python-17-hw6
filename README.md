@@ -1,4 +1,4 @@
-# python-17
+# python-17 #
 "Python Developer" course at otus.ru. Group 2017
 
 ### Запуск проекта ###
@@ -27,8 +27,25 @@ make stage
 * hasker
 * peter
 
+### API ###
 
-### Author
+* /api/v1/questions/ - работа с вопросами
+* /api/v1//tags/ - работа с тэгами
+* /api/v1/answers/ - работа с ответами
+* /api/v1/trending/ - топ 20
+* /api/v1/search/?q=<search text> - поиск
+* /api/v1/questions/<id>/answers/ - список ответов конкретного вопроса
+
+Примеры работы с API на фикстурах:
+
+* аутентификация
+* получить index: /api/v1/questions/
+* получить trending: /api/v1/trending/
+* сделать поисковый запрос: /api/v1/search/?q=friend
+* получить вопрос: /api/v1/questions/1/
+* получить ответы к вопросу: /api/v1/questions/1/answers/
+
+### Author ###
 
 Alexey Grebenshchikov
 
