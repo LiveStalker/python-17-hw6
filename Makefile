@@ -3,7 +3,7 @@ MANAGE_PY = ./hasker/manage.py
 IMAGE_NAME = hasker
 
 .PHONY: stage
-stage: prepare-db start-postgres start-nginx start-hasker
+stage: in-env prepare-db start-postgres start-nginx start-hasker
 
 .PHONY: start-postgres
 start-postgres:
