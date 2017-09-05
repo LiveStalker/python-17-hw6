@@ -3,13 +3,13 @@ MANAGE_PY = ./hasker/manage.py
 IMAGE_NAME = hasker
 # Do not do it in production :)
 # Keep secrets in secret
-export PG_CONFDIR="/var/lib/pgsql/data"
-export HASKER_DB_HOST="localhost"
-export HASKER_DB_NAME="hasker"
-export HASKER_DB_USER="hasker"
-export HASKER_DB_PASSWORD="hasker"
-export HASKER_SECRET="very secret string"
-export HASKER_RUN_ENV="stage"
+export PG_CONFDIR=/var/lib/pgsql/data
+export HASKER_DB_HOST=localhost
+export HASKER_DB_NAME=hasker
+export HASKER_DB_USER=hasker
+export HASKER_DB_PASSWORD=hasker
+export HASKER_SECRET=very secret string
+export HASKER_RUN_ENV=stage
 
 .PHONY: stage
 stage: in-env prepare-db start-postgres start-nginx start-hasker
