@@ -56,6 +56,8 @@ in-env: in-install-pkg in-configs
 
 .PHONY: in-install-pkg
 in-install-pkg:
+	cp ./etc/nginx.repo /etc/yum.repos.d/nginx.repo
+	yum -y update
 	yum -y install epel-release
 	yum install -y\
         vim\
@@ -78,3 +80,14 @@ in-configs:
 	@-usermod -a -G hasker nginx || true
 	@-rm /etc/nginx/conf.d/default.conf || true
 	cp ./etc/postgresql-setup /usr/bin/postgresql-setup
+	chmod +x /usr/bin/postgresql-setup
+	postgresql-setup initdb
+	cp ./etc/postgresql.conf /var/lib/pgsql/data/postgresql.conf
+	cp ./etc/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf
+	export PG_CONFDIR="/var/lib/pgsql/data"
+	export HASKER_DB_HOST="localhost"
+	export HASKER_DB_NAME="hasker"
+	export HASKER_DB_USER="hasker"
+	export HASKER_DB_PASSWORD="hasker"
+	export HASKER_SECRET="very secret string"
+	export HASKER_RUN_ENV="stage"
