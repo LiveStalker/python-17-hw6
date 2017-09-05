@@ -17,6 +17,17 @@ cd /app
 make stage
 ```
 
+Тестовые пользователи (у всех пароль P@$$w0rd): 
+
+* alexey
+* alise
+* basil
+* bob
+* gregory
+* hasker
+* peter
+
+
 ### Author
 
 Alexey Grebenshchikov
