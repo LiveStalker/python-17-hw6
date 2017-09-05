@@ -57,6 +57,7 @@ load-fixtures:
 .PHONY: collect-static
 collect-static:
 	@mkdir -p /var/www/static
+	@cp -R hasker/media /var/www/
 	@cd hasker; python manage.py collectstatic --noinput
 
 .PHONY: docker-build
