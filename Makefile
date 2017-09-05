@@ -67,7 +67,7 @@ in-install-pkg:
         gcc \
         nginx \
         postgresql-server
-    wget -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py
-    python /tmp/get-pip.py
-    pip install -r requirements.txt
-    pip install uwsgi
+	curl -o /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py
+	python /tmp/get-pip.py
+	pip install -r requirements.txt
+	pip install uwsgi
