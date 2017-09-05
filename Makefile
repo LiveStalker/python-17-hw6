@@ -81,7 +81,7 @@ in-configs:
 	@-rm /etc/nginx/conf.d/default.conf || true
 	cp ./etc/postgresql-setup /usr/bin/postgresql-setup
 	chmod +x /usr/bin/postgresql-setup
-	postgresql-setup initdb
+	@-postgresql-setup initdb || true
 	cp ./etc/postgresql.conf /var/lib/pgsql/data/postgresql.conf
 	cp ./etc/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf
 	export PG_CONFDIR="/var/lib/pgsql/data"
