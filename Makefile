@@ -38,6 +38,7 @@ start-hasker: load-fixtures collect-static
 
 .PHONY: prepare-db
 prepare-db:
+	@-sudo -u postgres PGDATA=/var/lib/pgsql/data pg_ctl stop || true
 	@echo "Create hasker database"
 	@sudo -u postgres -H postgres --single \
     -c config_file=${PG_CONFDIR}/postgresql.conf -D ${PG_CONFDIR} \
