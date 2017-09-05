@@ -39,6 +39,13 @@ make stage
 Примеры работы с API на фикстурах:
 
 * аутентификация
+```bash
+# получение токена
+curl -X POST -H "Content-Type: application/json" -d '{"username":"hasker","password":"P@$$w0rd"}' http://<host:port>/api/v1/auth/login/
+
+# использование токена
+curl -H "Authorization: JWT <your_token>" http://<host:port>/api/v1/questions/
+```
 * получить index: /api/v1/questions/
 * получить trending: /api/v1/trending/
 * сделать поисковый запрос: /api/v1/search/?q=friend
