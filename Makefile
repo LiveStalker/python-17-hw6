@@ -22,6 +22,7 @@ start-postgres:
 	-D ${PG_CONFDIR} &
 	@echo "Wait 5s..."
 	@sleep 5s
+
 .PHONY: start-nginx
 start-nginx:
 	@echo "Starting nginx"
