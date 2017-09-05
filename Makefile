@@ -50,3 +50,21 @@ docker-build:
 .PHONY: docker-bash
 docker-bash: docker-build
 	docker run --rm -it -p 8080:80 $(IMAGE_NAME) /bin/bash
+
+.PHONY: in-env:
+in-env: in-install-pkg
+
+.PHONY: in-install-pkg
+in-install-pkg:
+	yum -y install epel-release
+	yum install -y\
+        vim\
+        sudo \
+        less\
+        git \
+        python \
+        python-devel \
+        gcc \
+        nginx \
+        postgresql-server
+    wget -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py
