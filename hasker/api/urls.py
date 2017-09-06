@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^trending/$', TrendingList.as_view()),
     url(r'^search/$', SearchList.as_view()),
     url(r'^questions/(?P<question_id>\d+)/answers/$', QuestionAnswersList.as_view()),
-    url(r'^auth/login/', obtain_jwt_token),
+    url(r'^auth/login/', obtain_jwt_token, name='api-auth'),
 ]
