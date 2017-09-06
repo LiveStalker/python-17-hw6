@@ -14,11 +14,11 @@ class QuestionSerializer(serializers.ModelSerializer):
     author = serializers.CharField(source='author.username', read_only=True)
     votes = serializers.IntegerField(read_only=True)
     answer_count = serializers.IntegerField(read_only=True)
-    tags = TagSerializer(many=True, read_only=True)
 
     class Meta:
         model = Question
-        fields = ('id', 'title', 'author', 'created', 'votes', 'answer_count', 'tags')
+        fields = ('id', 'title', 'author', 'content',
+                  'created', 'votes', 'answer_count', 'tags')
 
 
 class AnswerSerializer(serializers.ModelSerializer):
