@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models, transaction
+from django.utils.text import slugify
 
 
 class Tag(models.Model):
@@ -30,6 +31,25 @@ class Question(models.Model):
     votes = models.IntegerField(default=0)
     slug = models.SlugField(max_length=200, unique=True)
     voters = models.ManyToManyField(User, through='QuestionVotedUser', related_name='voted_questions')
+
+    @staticmethod
+    def ask_question(user, form):
+        with transaction.atomic():
+            question = Question()
+            question.title = form.cleaned_data.get('title')
+            question.content = form.cleaned_data.get('content')
+            question.author = user
+            question.slug = slugify(question.title)
+            question.save()
+            for word in form.cleaned_data.get('tags'):
+                try:
+                    tag = Tag.objects.get(word=word)
+                except Tag.DoesNotExist:
+                    tag = Tag(word=word)
+                    tag.save()
+                question.tags.add(tag)
+            question.save()
+            return question
 
     @models.permalink
     def get_absolute_url(self):
@@ -60,6 +80,15 @@ class Answer(models.Model):
     correct = models.BooleanField(default=False)
     votes = models.IntegerField(default=0)
     voters = models.ManyToManyField(User, through='AnswerVotedUser', related_name='voted_answers')
+
+    @staticmethod
+    def post_answer(user, question, form):
+        with transaction.atomic():
+            answer = form.save(commit=False)
+            answer.author = user
+            answer.question = question
+            answer.save()
+            return answer
 
     @models.permalink
     def get_correct_url(self):

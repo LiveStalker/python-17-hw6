@@ -6,7 +6,6 @@ from django.views.generic import View, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.utils.text import slugify
 from django.shortcuts import get_object_or_404
 from django.db.models import Count
 from django.conf import settings
@@ -52,20 +51,7 @@ class AskQuestionView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         form = AskQuestionForm(request.POST)
         if form.is_valid():
-            question = Question()
-            question.title = form.cleaned_data.get('title')
-            question.content = form.cleaned_data.get('content')
-            question.author = request.user
-            question.slug = slugify(question.title)
-            question.save()
-            for word in form.cleaned_data.get('tags'):
-                try:
-                    tag = Tag.objects.get(word=word)
-                except Tag.DoesNotExist:
-                    tag = Tag(word=word)
-                    tag.save()
-                question.tags.add(tag)
-            question.save()
+            question = Question.ask_question(form)
             return redirect('question', slug=question.slug)
         return render(request, 'ask.html', {'form': form})
 
@@ -97,14 +83,9 @@ class QuestionView(ListView):
     def post(self, request, *argc, **kwargs):
         slug = kwargs.get('slug')
         question = get_object_or_404(Question, slug=slug)
-        answers = question.answers.order_by('-votes').order_by('-created')
         form = AnswerForm(request.POST)
         if form.is_valid():
-            answer = form.save(commit=False)
-            answer.author = request.user
-            answer.question = question
-            answer.save()
-            form = AnswerForm()
+            Answer.post_answer(request.user, question, form)
         return redirect('question', slug=slug)
 
 
