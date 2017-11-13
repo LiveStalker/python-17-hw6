@@ -9,7 +9,7 @@ class Tag(models.Model):
     word = models.CharField(max_length=50, blank=False, null=False)
 
     def __str__(self):
-        return self.word.encode('UTF-8')
+        return self.word
 
     def __unicode__(self):
         return self.word
@@ -40,7 +40,7 @@ class Question(models.Model):
         return self.answers.filter(correct=True).count()
 
     def __str__(self):
-        return self.title.encode('UTF-8')
+        return self.title
 
     def __unicode__(self):
         return self.title[:50]
