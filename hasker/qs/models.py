@@ -31,6 +31,7 @@ class Question(models.Model):
     votes = models.IntegerField(default=0)
     slug = models.SlugField(max_length=200, unique=True)
     voters = models.ManyToManyField(User, through='QuestionVotedUser', related_name='voted_questions')
+    correct = models.OneToOneField('Answer', default=None, null=True, related_name='answered_question')
 
     @staticmethod
     def ask_question(user, form):
@@ -77,7 +78,6 @@ class Answer(models.Model):
     content = models.TextField(blank=False, null=False)
     author = models.ForeignKey(User, related_name='answers')
     created = models.DateTimeField(auto_now_add=True)
-    correct = models.BooleanField(default=False)
     votes = models.IntegerField(default=0)
     voters = models.ManyToManyField(User, through='AnswerVotedUser', related_name='voted_answers')
 

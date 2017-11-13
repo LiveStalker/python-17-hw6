@@ -24,42 +24,70 @@
             <hr>
         </div>
     </div>
-    {% for a in answers %}
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div class="row">
-                    <div class="col-sm-1" align="center">
-                        <!--TODO disable for anonimus-->
-                        <a name="{{ a.id }}"></a>
-                        <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="up"><span
-                                class="glyphicon glyphicon-menu-up"></span></a></p>
-                        <p class="answer-votes-{{ a.id }}">{{ a.votes }}</p>
-                        <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="down"><span
-                                class="glyphicon glyphicon-menu-down"></span></a></p>
-                        <!--check question as correct-->
-                        {% if question.author == user and not question.is_correct_answered %}
-                            <p><a href="{{ a.get_correct_url }}"><span
-                                    class="glyphicon glyphicon-star-empty"></span></a></p>
-                        {% endif %}
-                        {% if a.correct %}
-                            {% if question.author == user %}
-                                <p><a href="{{ a.get_correct_url }}"><span
-                                        class="glyphicon glyphicon-star"></span></a></p>
-                            {% else %}
-                                <p><span class="glyphicon glyphicon-star"></span></p>
+    <!-- Correct answer if does exists -->
+    {% if question.correct is not None %}
+        {% with a=question.correct %}
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="row">
+                        <div class="col-sm-1" align="center">
+                            <a name="{{ a.id }}"></a>
+                            <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="up"><span
+                                    class="glyphicon glyphicon-menu-up"></span></a></p>
+                            <p class="answer-votes-{{ a.id }}">{{ a.votes }}</p>
+                            <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="down"><span
+                                    class="glyphicon glyphicon-menu-down"></span></a></p>
+                            <!--check question as correct-->
+                            {% if a == question.correct %}
+                                {% if question.author == user %}
+                                    <p><a href="{{ a.get_correct_url }}"><span
+                                            class="glyphicon glyphicon-star"></span></a></p>
+                                {% else %}
+                                    <p><span class="glyphicon glyphicon-star"></span></p>
+                                {% endif %}
                             {% endif %}
-                        {% endif %}
+                        </div>
+                        <div class="col-sm-11">
+                            <blockquote>
+                                <p>{{ a.content }}</p>
+                                <footer>{{ a.author }} ({{ a.created | naturaltime }})</footer>
+                            </blockquote>
+                        </div>
                     </div>
-                    <div class="col-sm-11">
-                        <blockquote>
-                            <p>{{ a.content }}</p>
-                            <footer>{{ a.author }} ({{ a.created | naturaltime }})</footer>
-                        </blockquote>
-                    </div>
+                    <hr>
                 </div>
-                <hr>
             </div>
-        </div>
+        {% endwith %}
+    {% endif %}
+    {% for a in answers %}
+        {% if a != question.correct %}
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="row">
+                        <div class="col-sm-1" align="center">
+                            <a name="{{ a.id }}"></a>
+                            <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="up"><span
+                                    class="glyphicon glyphicon-menu-up"></span></a></p>
+                            <p class="answer-votes-{{ a.id }}">{{ a.votes }}</p>
+                            <p><a href="#{{ a.id }}" class="answer" data-id="{{ a.id }}" data-vote="down"><span
+                                    class="glyphicon glyphicon-menu-down"></span></a></p>
+                            <!--check question as correct-->
+                            {% if question.author == user and question.correct is None %}
+                                <p><a href="{{ a.get_correct_url }}"><span
+                                        class="glyphicon glyphicon-star-empty"></span></a></p>
+                            {% endif %}
+                        </div>
+                        <div class="col-sm-11">
+                            <blockquote>
+                                <p>{{ a.content }}</p>
+                                <footer>{{ a.author }} ({{ a.created | naturaltime }})</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        {% endif %}
     {% endfor %}
     {% if is_paginated %}
         <div class="row">
