@@ -95,12 +95,11 @@ class AnswerCorrect(LoginRequiredMixin, View):
     def get(self, request, *argc, **kwargs):
         answer_id = kwargs['id']
         answer = get_object_or_404(Answer, id=answer_id)
-        # TODO if question have already correct answer
         question = answer.question
         if request.user == question.author:
-            if not question.is_correct_answered:
-                answer.correct = True
+            if question.correct == answer:
+                question.correct = None
             else:
-                answer.correct = False
-            answer.save()
+                question.correct = answer
+            question.save()
         return redirect('question', slug=question.slug)

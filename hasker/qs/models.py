@@ -31,6 +31,7 @@ class Question(models.Model):
     votes = models.IntegerField(default=0)
     slug = models.SlugField(max_length=200, unique=True)
     voters = models.ManyToManyField(User, through='QuestionVotedUser', related_name='voted_questions')
+    correct = models.OneToOneField('Answer', default=None, null=True, related_name='answered_question')
 
     @staticmethod
     def ask_question(user, form):
