@@ -42,8 +42,6 @@ class AskQuestionView(LoginRequiredMixin, View):
     login_url = '/login/'
     redirect_field_name = 'next'
 
-    # TODO remove query string ?next
-
     def get(self, request, *args, **kwargs):
         form = AskQuestionForm()
         return render(request, 'ask.html', {'form': form})
@@ -63,7 +61,7 @@ class QuestionView(ListView):
     paginate_by = settings.ANSWERS_PAGE_SIZE
 
     def get_ordering(self):
-        return ['-correct', '-votes', '-created']
+        return ['-votes', '-created']
 
     def get_context_data(self, **kwargs):
         ctx = super(QuestionView, self).get_context_data(**kwargs)

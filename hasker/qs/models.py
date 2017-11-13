@@ -78,7 +78,6 @@ class Answer(models.Model):
     content = models.TextField(blank=False, null=False)
     author = models.ForeignKey(User, related_name='answers')
     created = models.DateTimeField(auto_now_add=True)
-    correct = models.BooleanField(default=False)
     votes = models.IntegerField(default=0)
     voters = models.ManyToManyField(User, through='AnswerVotedUser', related_name='voted_answers')
 
