@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models, transaction
 from django.utils.text import slugify
 
@@ -17,7 +17,7 @@ class Tag(models.Model):
 
 
 class QuestionVotedUser(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     question = models.ForeignKey('Question', on_delete=models.CASCADE)
     result = models.SmallIntegerField()
 
@@ -25,12 +25,13 @@ class QuestionVotedUser(models.Model):
 class Question(models.Model):
     title = models.CharField(max_length=200, blank=False, null=False)
     content = models.TextField(blank=False, null=False)
-    author = models.ForeignKey(User, related_name='questions')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='questions')
     created = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tag, related_name='questions')
     votes = models.IntegerField(default=0)
     slug = models.SlugField(max_length=200, unique=True)
-    voters = models.ManyToManyField(User, through='QuestionVotedUser', related_name='voted_questions')
+    voters = models.ManyToManyField(settings.AUTH_USER_MODEL, through='QuestionVotedUser',
+                                    related_name='voted_questions')
     correct = models.OneToOneField('Answer', default=None, null=True, related_name='answered_question')
 
     @staticmethod
@@ -68,7 +69,7 @@ class Question(models.Model):
 
 
 class AnswerVotedUser(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     answer = models.ForeignKey('Answer', on_delete=models.CASCADE)
     result = models.SmallIntegerField()
 
@@ -76,10 +77,10 @@ class AnswerVotedUser(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey(Question, related_name='answers')
     content = models.TextField(blank=False, null=False)
-    author = models.ForeignKey(User, related_name='answers')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='answers')
     created = models.DateTimeField(auto_now_add=True)
     votes = models.IntegerField(default=0)
-    voters = models.ManyToManyField(User, through='AnswerVotedUser', related_name='voted_answers')
+    voters = models.ManyToManyField(settings.AUTH_USER_MODEL, through='AnswerVotedUser', related_name='voted_answers')
 
     @staticmethod
     def post_answer(user, question, form):
