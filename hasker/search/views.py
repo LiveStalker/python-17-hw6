@@ -18,6 +18,7 @@ class SearchView(ListView):
         q = super(SearchView, self).get_queryset()
         if 'q' in self.request.GET:
             search_text = self.request.GET.get('q')
+            search_text = search_text[:settings.MAX_QUERY_LENGTH]
             q = q.filter(Q(title__icontains=search_text) |
                          Q(content__icontains=search_text))
         return q.order_by('-votes').annotate(answer_count=Count('answers'))
