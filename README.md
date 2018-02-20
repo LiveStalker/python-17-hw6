@@ -58,4 +58,4 @@ Alexey Grebenshchikov
 
 slack: Alexey Grebenshchikov (alexey.g)
 
-email: mi.alekiso@gmail.com
+email: mi.aleksio@gmail.com
